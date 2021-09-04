@@ -90,20 +90,6 @@ export default {
     baseURL: 'http://localhost:8000',
     credentials: true
   },
-  i18n: {
-    locales: ['en', 'fr', 'es', 'ar'],
-    defaultLocale: 'en',
-    vueI18n: {
-      fallbackLocale: 'en',
-      messages: {
-        en: require('./locales/en.json'),
-        fr: require('./locales/fr.json'),
-        es: require('./locales/es.json'),
-        ar: require('./locales/ar.json'),
-        zh: require('./locales/zh.json')
-      }
-    }
-  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/

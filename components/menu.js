@@ -6,7 +6,7 @@ export const menuItems = [
     },
     {
         id: 2,
-        label: "menuitems.education.text",
+        label: "Education Content",
         icon: "ri-book-2-line",
         link: '/education_content'
     },
