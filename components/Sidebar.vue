@@ -245,7 +245,7 @@ export default {
 
         <nuxt-link to="/" class="logo logo-light text-center">
             <span class="logo-sm">
-                <img src="~/assets/images/logo-white.png" alt height="30" />
+                <img src="~/assets/images/favicon.png" alt height="30" />
             </span>
             <span class="logo-lg">
                 <img src="~/assets/images/logo-white.png" alt height="30" />

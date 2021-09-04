@@ -24,7 +24,7 @@ const UserData = [
     actions: "cancle invitation"
   },
   {
-    id: 1,
+    id: 4,
     name: "Nik Patel",
     email: "nikpatel@gmail.com",
     role: "owner",
@@ -32,7 +32,7 @@ const UserData = [
     actions: ""
   },
   {
-    id: 2,
+    id: 5,
     name: "Nimesh Kumar",
     email: "nimesh@gmail.com",
     role: "admin",
@@ -40,7 +40,7 @@ const UserData = [
     actions: "block"
   },
   {
-    id: 3,
+    id: 6,
     name: "Yasheera Perera",
     email: "yasheera@gmail.com",
     role: "member",
@@ -48,7 +48,7 @@ const UserData = [
     actions: "cancle invitation"
   },
   {
-    id: 2,
+    id: 7,
     name: "Nimesh Kumar",
     email: "nimesh@gmail.com",
     role: "admin",
@@ -56,13 +56,61 @@ const UserData = [
     actions: "block"
   },
   {
-    id: 3,
+    id: 8,
+    name: "Yasheera Perera",
+    email: "yasheera@gmail.com",
+    role: "member",
+    status: "invitation pending",
+    actions: "cancle invitation"
+  },,
+  {
+    id: 9,
+    name: "Nimesh Kumar",
+    email: "nimesh@gmail.com",
+    role: "admin",
+    status: "active",
+    actions: "block"
+  },
+  {
+    id: 10,
     name: "Yasheera Perera",
     email: "yasheera@gmail.com",
     role: "member",
     status: "invitation pending",
     actions: "cancle invitation"
   },
+  {
+    id: 11,
+    name: "Nik Patel",
+    email: "nikpatel@gmail.com",
+    role: "owner",
+    status: "active",
+    actions: ""
+  },
+  {
+    id: 12,
+    name: "Nimesh Kumar",
+    email: "nimesh@gmail.com",
+    role: "admin",
+    status: "active",
+    actions: "block"
+  },
+  {
+    id: 13,
+    name: "Yasheera Perera",
+    email: "yasheera@gmail.com",
+    role: "member",
+    status: "invitation pending",
+    actions: "cancle invitation"
+  },
+  {
+    id: 14,
+    name: "Nimesh Kumar",
+    email: "nimesh@gmail.com",
+    role: "admin",
+    status: "active",
+    actions: "block"
+  }
  
 ];
 

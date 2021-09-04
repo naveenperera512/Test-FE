@@ -79,14 +79,15 @@ export default {
   ],
   auth: {
     strategies: {
-      'laravelSanctum': {
+      laravelSanctum: {
         provider: 'laravel/sanctum',
-        url: process.env.VUE_APP_API_URL
-      },
+        url: 'http://localhost:8000'
+      }
     }
   },
+
   axios: {
-    baseUrl: process.env.VUE_APP_API_URL,
+    baseURL: 'http://localhost:8000',
     credentials: true
   },
   i18n: {

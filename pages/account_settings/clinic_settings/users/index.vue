@@ -127,6 +127,7 @@ export default {
     mounted() {
         // Set the initial number of items
         this.totalRows = this.items.length;
+        console.log(UserData)
     },
     methods: {
         /**
