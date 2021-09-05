@@ -4,7 +4,7 @@ export default {
     extendRoutes(routes) {
       routes.push({
         path: "/",
-        component: "~/pages/education_content/"
+        component: "~/pages/"
       });
     }
   },

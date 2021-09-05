@@ -19,58 +19,22 @@
                 </div>
                       <!-- form -->
                       <b-form @submit.prevent="register">
-
-                              <!-- Title-->
-                              <b-form-group label-for="input-title">
+    
+                              <!-- name-->
+                              <b-form-group label-for="input-name">
                                   <template v-slot:label>
-                                    Title
+                                    Name
                                   </template>
                                   <b-form-input
-                                    id="input-title"
-                                    v-model="form.title"
+                                    id="input-name"
+                                    v-model="form.name"
                                     type="text"
-                                    :state="this.errors && this.errors.title ? false : null"
-                                    placeholder="Enter Title" />
+                                    :state="this.errors && this.errors.name ? false : null"
+                                    placeholder="Enter Name" />
                                   <b-form-invalid-feedback
-                                    v-if="errors && errors.title"
-                                    id="input-title-feedback">
-                                    {{ errors.title[0] }}
-                                  </b-form-invalid-feedback>
-                              </b-form-group>
-
-                              <!-- first name-->
-                              <b-form-group label-for="input-first_name">
-                                  <template v-slot:label>
-                                    First Name
-                                  </template>
-                                  <b-form-input
-                                    id="input-first_name"
-                                    v-model="form.first_name"
-                                    type="text"
-                                    :state="this.errors && this.errors.first_name ? false : null"
-                                    placeholder="Enter First Name" />
-                                  <b-form-invalid-feedback
-                                    v-if="errors && errors.first_name"
-                                    id="input-first_name-feedback">
-                                    {{ errors.first_name[0] }}
-                                  </b-form-invalid-feedback>
-                              </b-form-group>
-
-                              <!-- last name-->
-                              <b-form-group label-for="input-last_name">
-                                  <template v-slot:label>
-                                    Last Name
-                                  </template>
-                                  <b-form-input
-                                    id="input-last_name"
-                                    v-model="form.last_name"
-                                    type="text"
-                                    :state="this.errors && this.errors.last_name ? false : null"
-                                    placeholder="Enter Last Name" />
-                                  <b-form-invalid-feedback
-                                    v-if="errors && errors.last_name"
-                                    id="input-last_name-feedback">
-                                    {{ errors.last_name[0] }}
+                                    v-if="errors && errors.name"
+                                    id="input-name-feedback">
+                                    {{ errors.name[0] }}
                                   </b-form-invalid-feedback>
                               </b-form-group>
 

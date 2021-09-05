@@ -1,3 +1,3 @@
 <template>
-    <div>admin</div>
+    <div>user</div>
 </template>
