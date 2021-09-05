@@ -7,7 +7,7 @@ import Vertical from "./vertical"
 import Horizontal from "./horizontal"
 import Detached from "./detached"
 import TwoColumn from "./two-column"
-import Footer from "../components/Footer.vue"
+import Footer2 from "../components/Footer2.vue"
 import Topbar2 from "../components/Topbar2.vue"
 /**
  * Default Layout
@@ -18,7 +18,7 @@ export default {
     Horizontal,
     Detached,
     TwoColumn,
-    Footer,
+    Footer2,
     Topbar2
   },
   data() {
@@ -51,7 +51,7 @@ export default {
     <Nuxt style="min-height: 70vh"
     v-if="!$auth.loggedIn || $auth.loggedIn && $auth.user.is_admin === 0 " />
 
-    <Footer
+    <Footer2
     v-if="!$auth.loggedIn || $auth.loggedIn && $auth.user.is_admin === 0 " />
 
     <Horizontal

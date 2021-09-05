@@ -111,7 +111,7 @@ export default {
         await this.$auth.loginWith('laravelSanctum' , {
           data: this.form
         })
-        await this.$router.replace({path:'/education_content'})
+        await this.$router.replace({path:'/'})
       }catch (error) {
         if(error.response.status === 422) {
           this.errors = error.response.data.errors;

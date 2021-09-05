@@ -8,16 +8,30 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row mb-2">
-                        <div class="col-sm-6">
-
-                            <nuxt-link to="/ecommerce/product-create" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle mr-1"></i> Add Job Type</nuxt-link>
+                        <div class="col-sm-12 col-md-6">
+                            <div id="tickets-table_length" class="dataTables_length">
+                                <label class="d-inline-flex align-items-center">
+                                    Display&nbsp;
+                                    <b-form-select v-model="perPage" size="sm" :options="pageOptions"></b-form-select>&nbsp;customers
+                                </label>
+                            </div>
                         </div>
+                        <!-- Search -->
+                        <div class="col-sm-12 col-md-6">
+                            <div id="tickets-table_filter" class="dataTables_filter text-md-right">
+                                <label class="d-inline-flex align-items-center">
+                                    Search:
+                                    <b-form-input v-model="filter" type="search" placeholder="Search..." class="form-control form-control-sm ml-2"></b-form-input>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- End search -->
                     </div>
                     <!-- Table -->
                     <div class="table-responsive mb-0">
                         <b-table table-class="table table-centered w-100" thead-tr-class="bg-light" :items="productData" :fields="fields" responsive="sm" :per-page="perPage" :current-page="currentPage" :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :filter="filter" :filter-included-fields="filterOn" @filtered="onFiltered">
 
-                            <template v-slot:cell(Jobtype)="data">
+                            <template v-slot:cell(Vacancy)="data">
                                 <div v-if="!data.item.image" class="avatar-xs d-inline-block mr-2">
                                     <div class="avatar-title bg-soft-primary rounded-circle text-primary">
                                         <i class="mdi mdi-account-circle m-0"></i>
@@ -26,6 +40,15 @@
                                 <h5 class="m-0 d-inline-block align-middle">
                                     <a href="#" class="text-dark">{{ data.item.name }}</a>
                                 </h5>
+                            </template>
+                            <template v-slot:cell(Category)="data">
+                                $ {{ data.item.rating }}
+                            </template>
+                            <template v-slot:cell(Jobtype)="data">
+                                $ {{ data.item.jobtype }}
+                            </template>
+                            <template v-slot:cell(status)="data">
+                                <span class="badge badge-soft-success" :class="{'badge-soft-danger': data.item.status === 'Deactive'}">{{ data.item.status }}</span>
                             </template>
                             <template v-slot:cell(action)>
                                 <ul class="list-inline table-action m-0">
@@ -79,7 +102,7 @@ export default {
     data() {
         return {
             productData: productData,
-            title: "Job Type List",
+            title: "Vacancy List",
             items: [{
                     text: "Minton"
                 },
@@ -99,9 +122,34 @@ export default {
             filterOn: [],
             sortBy: "age",
             sortDesc: false,
-            fields: [
+            fields: [{
+                    key: "check",
+                    label: ""
+                },
+                {
+                    key: "Vacancy",
+                    sortable: true
+                },
+                {
+                    key: "Category",
+                    sortable: true
+                },
                 {
                     key: "Jobtype",
+                    sortable: true
+                },
+                {
+                    key: "date",
+                    label: "Added Date",
+                    sortable: true
+                },
+                {
+                    key: "Jobtype",
+                    sortable: true
+                },
+                {
+                    key: "status",
+                    label: "Status",
                     sortable: true
                 },
                 "action"

@@ -10,14 +10,13 @@
                     <div class="row mb-2">
                         <div class="col-sm-6">
 
-                            <nuxt-link to="/ecommerce/product-create" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle mr-1"></i> Add Job Type</nuxt-link>
+                            <nuxt-link to="/ecommerce/product-create" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle mr-1"></i> Add Category</nuxt-link>
                         </div>
                     </div>
                     <!-- Table -->
                     <div class="table-responsive mb-0">
                         <b-table table-class="table table-centered w-100" thead-tr-class="bg-light" :items="productData" :fields="fields" responsive="sm" :per-page="perPage" :current-page="currentPage" :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :filter="filter" :filter-included-fields="filterOn" @filtered="onFiltered">
-
-                            <template v-slot:cell(Jobtype)="data">
+                            <template v-slot:cell(Category)="data">
                                 <div v-if="!data.item.image" class="avatar-xs d-inline-block mr-2">
                                     <div class="avatar-title bg-soft-primary rounded-circle text-primary">
                                         <i class="mdi mdi-account-circle m-0"></i>
@@ -79,7 +78,7 @@ export default {
     data() {
         return {
             productData: productData,
-            title: "Job Type List",
+            title: "Category List",
             items: [{
                     text: "Minton"
                 },
@@ -101,7 +100,7 @@ export default {
             sortDesc: false,
             fields: [
                 {
-                    key: "Jobtype",
+                    key: "Category",
                     sortable: true
                 },
                 "action"
