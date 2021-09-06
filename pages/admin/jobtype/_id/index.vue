@@ -23,6 +23,7 @@
             <b-form-group label-for="name">
               <template #label>
                 Category Name <span class="text-danger">*</span>
+                {{ jobTypes.name }}
               </template>
               <b-form-input
                 id="name"
@@ -39,31 +40,12 @@
                 {{ errors.name[0] }}
               </b-form-invalid-feedback>
             </b-form-group>
-            <!-- description -->
-            <b-form-group label-for="description">
-              <template #label>
-                Category Description <span class="text-danger">*</span>
-              </template>
-              <b-form-input
-                id="description"
-                v-model="form.description"
-                type="text"
-                :state="errors && errors.description ? false : null"
-                placeholder="Enter Category Description"
-                required
-              />
-              <b-form-invalid-feedback
-                v-if="errors && errors.description"
-                id="description-feedback"
-              >
-                {{ errors.description[0] }}
-              </b-form-invalid-feedback>
-            </b-form-group>
 
             <!-- slug -->
             <b-form-group label-for="slug">
               <template #label>
                 Slug <span class="text-danger">*</span>
+                {{ jobTypes.slug }}
               </template>
               <b-form-input
                 id="slug"
