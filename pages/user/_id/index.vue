@@ -2,64 +2,64 @@
   <div>
     <div class="container">
 
-        <div class="row">
-          <div>
-            <div class="row mb-3">
-              <div>
-                <div class="p-2 mb-lg-0 ml-5">
-                  <div>
-                    <nuxt-link to="/user" class="btn bg-info ml-2">
-                      Back
-                    </nuxt-link>
-                  </div>
-                  <table class="table table-borderless table-sm mb-0">
-                    <tbody>
-                      <tr>
-                        <th scope="row">
-                          Employeer:
-                        </th>
-                        <td>{{ vacancies.employee_name }}</td>
-                      </tr>
-                      <th scope="row">
-                        Job type:
-                      </th>
-                      <td>{{ jobs.id }}</td>
-                      <tr>
-                        <th scope="row">
-                          Aplication deadline:
-                        </th>
-                        <td>2021-10-31</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">
-                          Location:
-                        </th>
-                        <td>{{ district.name }} , {{ cities.name }}</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">
-                          Email address:
-                        </th>
-                        <td>{{ vacancies.employee_email }}</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">
-                          Phone :
-                        </th>
-                        <td>{{ vacancies.telephone }}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-              <div class="row justify-content-center ml-5">
+      <div class="row">
+        <div>
+          <div class="row mb-3">
+            <div>
+              <div class="p-2 mb-lg-0 ml-5">
                 <div>
-                  <img id="myImage" alt="product-img" width="600px" height="1000px" src="~/assets/images/vacancy.png">
+                  <nuxt-link to="/employeer" class="btn bg-info ml-2">
+                    Back
+                  </nuxt-link>
                 </div>
+                <table class="table table-borderless table-sm mb-0">
+                  <tbody>
+                  <tr>
+                    <th scope="row">
+                      Employeer:
+                    </th>
+                    <td>{{ vacancies.employee_name }}</td>
+                  </tr>
+                  <th scope="row">
+                    Job type:
+                  </th>
+                  <td>{{ jobs.name }}</td>
+                  <tr>
+                    <th scope="row">
+                      Aplication deadline:
+                    </th>
+                    <td>2021-10-31</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      Location:
+                    </th>
+                    <td>{{ district.name }} , {{ cities.name }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      Email address:
+                    </th>
+                    <td>{{ vacancies.employee_email }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      Phone :
+                    </th>
+                    <td>{{ vacancies.telephone }}</td>
+                  </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
+          </div>
+          <div class="row justify-content-center ml-5">
+            <div>
+              <img id="myImage" alt="product-img" width="600px" height="1000px" src="~/assets/images/vacancy.png">
+            </div>
+          </div>
         </div>
+      </div>
 
     </div>
   </div>
