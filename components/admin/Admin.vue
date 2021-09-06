@@ -49,10 +49,9 @@
             <template #cell(action)="data">
               <ul class="list-inline table-action m-0">
                 <li class="list-inline-item mr-3">
-                  <nuxt-link :to="'/admin/' +  data.item.id ">
-                    <a href="javascript:void(0);" class="action-icon">
-                      <i class="mdi mdi-square-edit-outline"></i></a>
-                  </nuxt-link>
+                  <button v-on:click="AdminList(data.item.id) "  class="bg-info border-0">
+                    Edit
+                  </button>
                 </li>
               </ul>
             </template>
@@ -111,7 +110,10 @@ export default {
           label: 'Email'
         },
         'action'
-      ]
+      ],
+      form: {
+        is_admin: '0',
+      }
     }
   },
   computed: {
@@ -126,7 +128,7 @@ export default {
     this.getAdminList()
   },
   methods: {
-    getAdminList (page =1) {
+    getAdminList(page = 1) {
       this.$axios.get('api/admin/users?page=' + page)
         .then((response) => {
           this.users = (response.data)
@@ -137,6 +139,17 @@ export default {
           console.log(error)
         })
     },
+    async AdminList(id) {
+      try {
+        await this.$axios.put(`api/admin/users/` + id, this.form)
+        await this.$router.replace({path: '/admin'})
+        await this.$router.replace({path: '/admin/admin-management'})
+      } catch (error) {
+        if (error.response.status === 422) {
+          this.errors = error.response.data.errors
+        }
+      }
+    }
   }
 }
 </script>
