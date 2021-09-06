@@ -23,7 +23,7 @@
                   <th scope="row">
                     Job type:
                   </th>
-                  <td>{{ jobs.id }}</td>
+                  <td>{{ jobs.name }}</td>
                   <tr>
                     <th scope="row">
                       Aplication deadline:

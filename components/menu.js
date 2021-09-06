@@ -3,7 +3,7 @@ export const menuItems = [
         id: 1,
         label: "Categories",
         icon: "ri-book-2-line",
-        link: '/admin/category'
+        link: '/admin'
     },
     {
         id: 2,
@@ -23,23 +23,6 @@ export const menuItems = [
         icon: "ri-book-2-line",
         link: '/admin/user-management'
     }
-    // {
-    //     id: 5,
-    //     label: "Education Content",
-    //     icon: "ri-book-2-line",
-    //     link: '/admin/user-management'
-    // }
-    // {
-    //     id: 6,
-    //     label: "menuitems.sessions.text",
-    //     icon: "ri-message-2-line",
-    //     link: '/sessions'
-    // },
-    // {
-    //     id: 4,
-    //     label: "menuitems.account_settings.text",
-    //     icon: "ri-settings-2-line",
-    //     link: '/account_settings'
-    // }
+
 ];
 

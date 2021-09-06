@@ -10,7 +10,6 @@ import Vacancy from '@/components/user/Vacancy'
 export default {
   data() {
     return {
-      vacancies: {}
     }
   },
   components:{
