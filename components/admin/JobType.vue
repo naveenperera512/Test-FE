@@ -5,7 +5,7 @@
         <div class="row mb-2">
           <div class="col-sm-12">
             <div class="float-sm-right">
-              <nuxt-link class="btn btn-info mb-2" to="/admin/add-jobtype/add">
+              <nuxt-link class="btn btn-info mb-2" to="/admin/jobType/add">
                 <i class="mdi mdi-plus-circle mr-1" /> Add Job Types
               </nuxt-link>
             </div>
@@ -55,16 +55,13 @@
                 {{ data.item.name }}
               </p>
             </template>
-            <template #cell(action)>
+            <template #cell(action)="data">
               <ul class="list-inline table-action m-0">
                 <li class="list-inline-item">
-                  <NuxtLink to="/admin/add-jobtype/update">
-                    Edit
-                  </NuxtLink>
-                </li>
-                <li class="list-inline-item">
-                  <a href="javascript:void(0);" class="action-icon">
-                    <i class="mdi mdi-square-edit-outline"></i></a>
+                  <nuxt-link :to="'/admin/jobtype/' +  data.item.id ">
+                    <a href="javascript:void(0);" class="action-icon">
+                      <i class="mdi mdi-square-edit-outline"></i></a>
+                  </nuxt-link>
                 </li>
                 <li class="list-inline-item">
                   <a href="javascript:void(0);" class="action-icon">

@@ -19,14 +19,10 @@
 import Category from '@/components/admin/Category'
 
 export default {
-  head() {
-    return {
-      title: `${this.title} `,
-    };
-  },
+
   data() {
     return {
-      title: `${this.title}`
+      title: `Category List `
     }
   },
   components:{
