@@ -88,7 +88,7 @@
         </div>
       </b-form>
       <div class="d-flex justify-content-center">
-        <LaravelVuePagination :data="vacancies" @pagination-change-page="getVacancies">
+        <LaravelVuePagination :data="vacancies" @pagination-change-page="getVacancies" class="pagination pagination-rounded">
           <span slot="prev-nav">&lt; Previous</span>
           <span slot="next-nav">Next &gt;</span>
         </LaravelVuePagination>
