@@ -17,9 +17,9 @@
                 nav-wrapper-class="col-sm-3"
                 content-class="pt-0"
               >
-                <b-tab title="Vacancy">
+                <b-tab title="Add Vacancy">
                   <b-card-text>
-                    <Vacancy />
+                    <AddVacancy />
                     </b-card-text>
                 </b-tab>
                 <b-tab title="Vacancy List">
@@ -41,9 +41,13 @@
   </div>
 </template>
 <script>
+import AddVacancy from './add-vacancy/index'
+import VacancyList from './vacancy-list/index'
 import Settings from './settings/index'
 export default {
   components: {
+    AddVacancy,
+    VacancyList,
     Settings
   },
   methods: {}
