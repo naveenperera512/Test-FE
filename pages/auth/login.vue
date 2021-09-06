@@ -93,7 +93,7 @@
 export default {
   asyncData({$auth, redirect}){
     if ($auth.loggedIn) {
-      redirect('/sessions')
+      redirect('/')
     }
   },
   data(){

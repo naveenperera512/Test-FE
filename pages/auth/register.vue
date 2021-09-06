@@ -19,7 +19,7 @@
                 </div>
                       <!-- form -->
                       <b-form @submit.prevent="register">
-    
+
                               <!-- name-->
                               <b-form-group label-for="input-name">
                                   <template v-slot:label>
@@ -93,7 +93,7 @@
                                     {{ errors.password_confirmation[0] }}
                                     </b-form-invalid-feedback>
                                 </b-form-group>
-          
+
                               <!-- checkbox  -->
                               <div class="form-group mb-3">
                                   <div class="custom-control custom-checkbox">
@@ -109,8 +109,8 @@
                       </b-form>
                     </div>
             </div>
-            
-          <!-- sign in  -->  
+
+          <!-- sign in  -->
          <div class="row mt-3">
             <div class="col-12 text-center">
                 <p class="text-muted">
@@ -128,7 +128,7 @@
 export default {
   asyncData({$auth, redirect}){
     if ($auth.loggedIn) {
-      redirect('/sessions')
+      redirect('/')
     }
   },
   data(){

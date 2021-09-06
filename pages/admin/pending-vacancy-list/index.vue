@@ -5,7 +5,7 @@
       <div class="col-12">
         <div class="card">
           <div  class="card-body">
-            <Vacancya  />
+            <Vacancyp  />
           </div>
         </div>
       </div>
@@ -16,17 +16,17 @@
 
 
 <script>
-import Vacancya from '@/components/admin/Vacancya'
+import Vacancyp from '@/components/admin/Vacancyp'
 
 export default {
 
   data() {
     return {
-      title: `Vacancy List`
+      title: `Pending Vacancy List`
     }
   },
   components:{
-    Vacancya
+    Vacancyp
   },
   methods: {
   }
