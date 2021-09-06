@@ -17,7 +17,7 @@
                                                00:50:42 Paatient 1
                                             </span>
                                         <span>
-                                <nuxt-link to="/education_content/video" class="btn btn-success mb-2"><div class="mx-2">Stop</div></nuxt-link>                     
+                                <nuxt-link to="/" class="btn btn-success mb-2"><div class="mx-2">Stop</div></nuxt-link>                     
                             </span>
                                         </div>
                                     </div>

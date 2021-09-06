@@ -20,7 +20,7 @@
                         <!-- start button -->
                         <div class="col-sm-12 col-md-1">
                             <div class="text-md-right ">
-                                <nuxt-link to="/education_content/video" class="btn btn-success mb-2"><div class="mx-2">Start</div></nuxt-link>                     
+                                <nuxt-link to="/" class="btn btn-success mb-2"><div class="mx-2">Start</div></nuxt-link>                     
                             </div>
                         </div>
                     </div>

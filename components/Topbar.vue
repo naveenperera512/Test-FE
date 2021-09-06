@@ -54,19 +54,6 @@ export default {
             let element = document.getElementById("topnav-menu-content");
             element.classList.toggle("show");
         },
-        /**
-         * Logout user
-         */
-        // logoutUser() {
-        //     if (process.env.auth === "firebase") {
-        //         this.$store.dispatch("auth/logOut");
-        //     } else if (process.env.auth === "fakebackend") {
-        //         this.$store.dispatch("authfack/logout");
-        //     }
-        //     this.$router.push({
-        //         path: "/",
-        //     });
-        // },
               logout: async function () {
         await this.$auth.logout()
         await this.$router.replace({path: '/'})
@@ -86,25 +73,24 @@ export default {
                     <div class="nav-user mr-0"><span class="pro-user-name ml-1">
                             <img src="~/assets/images/user.png" alt="user-image" class="rounded-circle" />
                         </span>
-                        {{ $auth.user.first_name }} {{ $auth.user.last_name }}
+                        {{ $auth.user.name }}
                             <i class="mdi mdi-chevron-down"></i>
                     </div>
                 </template>
 
                 <b-dropdown-item href="#">
-                    <i class="remixicon-account-circle-line"></i>
-                    <span>{{ $t('navbar.dropdown.name.list.account') }}</span>
+                    <nuxt-link :to="{ path: '/admin/settings'}">
+                     <i class="remixicon-account-circle-line"></i>
+                    <span>Settings</span>
+                    </nuxt-link>
                 </b-dropdown-item>
 
-                <b-dropdown-item href="#">
-                    <i class="remixicon-settings-3-line"></i>
-                    <span>{{ $t('navbar.dropdown.name.list.settings') }}</span>
-                </b-dropdown-item>
+                
 
                 <b-dropdown-divider></b-dropdown-divider>
                 <a class="dropdown-item" @click="logout" >
                     <i class="fe-log-out mr-1"></i>
-                    <span>{{ $t('navbar.dropdown.name.list.logout') }}</span>
+                    <span>Logout</span>
                 </a>
             </b-nav-item-dropdown>
         </ul>
