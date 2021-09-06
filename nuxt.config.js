@@ -55,7 +55,8 @@ export default {
     "~/plugins/quill-editor.js",
     "~/plugins/chartist.js",
     "~/plugins/vue-googlemap.js",
-    "~/plugins/string-filter"
+    "~/plugins/string-filter",
+    '~/plugins/laravel-vue-pagination'
   ],
   /*
   ** Auto import components
