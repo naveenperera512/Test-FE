@@ -5,7 +5,7 @@
         <div class="row mb-2">
           <div class="col-sm-12">
             <div class="float-sm-right">
-              <nuxt-link class="btn btn-info mb-2" to="/admin/add-jobtype/add">
+              <nuxt-link class="btn btn-info mb-2" to="/admin/add">
                 <i class="mdi mdi-plus-circle mr-1" /> Add Categories
               </nuxt-link>
             </div>
@@ -45,49 +45,51 @@
             thead-tr-class="bg-light"
             @filtered="onFiltered"
           >
-            <template #cell(id)="data">
-              <p class="m-0 d-inline-block align-middle">
-                {{ data.item.id }}
-              </p>
-            </template>
             <template #cell(name)="data">
               <p class="m-0 d-inline-block align-middle">
+                {{ data.item.id }} )
                 {{ data.item.name }}
               </p>
             </template>
-            <template #cell(action)>
+            <template #cell(action)="data">
               <ul class="list-inline table-action m-0">
-                <li class="list-inline-item">
-                  <NuxtLink to="/admin/add-jobtype/update">
-                    Edit
-                  </NuxtLink>
+                <li class="list-inline-item mr-3">
+                  <nuxt-link :to="'/admin/' +  data.item.id ">
+                    <a href="javascript:void(0);" class="action-icon">
+                      <i class="mdi mdi-square-edit-outline"></i></a>
+                  </nuxt-link>
                 </li>
                 <li class="list-inline-item">
-                  <a href="javascript:void(0);" class="action-icon">
-                    <i class="mdi mdi-square-edit-outline"></i></a>
-                </li>
-                <li class="list-inline-item">
+                  <button v-on:click="Deletecategories(data.item.id ) "  class="bg-white border-0">
                   <a href="javascript:void(0);" class="action-icon">
                     <i class="mdi mdi-delete"></i></a>
+                  </button>
                 </li>
               </ul>
             </template>
           </b-table>
         </div>
-        <div class="row">
-          <div class="col">
-
-            <div  class="d-flex justify-content-end">
-              <LaravelVuePagination :data="categories" @pagination-change-page="getCategoryList" class="pagination pagination-rounded">
-                <span slot="prev-nav">&lt; Previous</span>
-                <span slot="next-nav">Next &gt;</span>
-              </LaravelVuePagination>
+              <div class="row">
+                <div class="col-sm-12 col-md-6">
+                  <div id="tickets-table_length" class="dataTables_length">
+                    <label class="d-inline-flex align-items-center">
+                      Display&nbsp;
+                      <b-form-select v-model="perPage" size="sm" :options="pageOptions"></b-form-select>&nbsp;customers
+                    </label>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <div class="dataTables_paginate paging_simple_numbers float-right">
+                    <ul class="pagination pagination-rounded">
+                      <!-- pagination -->
+                      <b-pagination v-model="currentPage" :total-rows="paginats.total" :per-page="perPage"></b-pagination>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
         </div>
       </div>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -99,24 +101,32 @@ export default {
   },
   data () {
     return {
+      paginats: {},
       categories: {},
       title: 'Products List',
+      totalRows: 1,
+      currentPage: 1,
+      perPage: 10,
       items: [],
-      pageOptions: [3, 5, 10, 100],
+      pageOptions: [10, 20, 50, 100],
       filter: null,
       filterOn: [],
       sortBy: 'age',
       sortDesc: false,
       fields: [{
-        key: 'id',
-        lable: 'ID'
-      },
-        {
           key: 'name',
           label: 'Name'
         },
         'action'
       ]
+    }
+  },
+  computed: {
+    /**
+     * Total no. of records
+     */
+    rows() {
+      return this.categories.length;
     }
   },
   created () {
@@ -127,12 +137,24 @@ export default {
       this.$axios.get('api/admin/categories?page=' + page)
         .then((response) => {
           this.categories = (response.data)
+          this.paginats = (response.data).meta
           console.log(this.categories)
         })
         .catch((error) => {
           // eslint-disable-next-line no-console
           console.log(error)
         })
+    },
+    async Deletecategories(id){
+      try {
+        await this.$axios.delete(`api/admin/categories/` + id)
+        await this.$router.replace({ path: '/admin/jobType' })
+        await this.$router.replace({ path: '/admin' })
+      } catch (error) {
+        if (error.response.status === 422) {
+          this.errors = error.response.data.errors
+        }
+      }
     }
   }
 }
