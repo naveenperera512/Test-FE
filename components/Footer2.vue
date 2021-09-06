@@ -22,11 +22,10 @@ export default {
   <div class="bg-info text-white">
     <div class="container text-center text-md-left mt-5">
       <div class="row">
-        <div class="col-md-3 mx-auto mb-4 mt-4">
-          <h6 class="text-uppercase font-weight-bold">
+        <div class="col-md-3 mx-auto mb- mt-4">
+          <h5 class="text-uppercase text-white font-weight-bold mb-4">
             More form ikman
-          </h6>
-          <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto">
+          </h5>
 
           <ul class="list-unstyled text-white">
             <li class="my-2">
@@ -45,10 +44,9 @@ export default {
         </div>
 
         <div class="col-md-3 mx-auto mb-4 mt-4">
-          <h6 class="text-uppercase font-weight-bold">
+          <h5 class="text-uppercase text-white font-weight-bold mb-4">
             Help and Support
-          </h6>
-          <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto">
+          </h5>
 
           <ul class="list-unstyled text-white">
             <li class="my-2">
@@ -67,10 +65,9 @@ export default {
         </div>
 
         <div class="col-md-3 mx-auto mb-4 mt-4">
-          <h6 class="text-uppercase font-weight-bold">
+          <h5 class="text-uppercase text-white font-weight-bold mb-4">
             Follow ikman
-          </h6>
-          <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto">
+          </h5>
 
           <ul class="list-unstyled">
             <li class="my-2">
@@ -89,10 +86,9 @@ export default {
         </div>
 
         <div class="col-md-3 mx-auto mb-4 mt-4">
-          <h6 class="text-uppercase font-weight-bold">
+          <h5 class="text-uppercase text-white font-weight-bold mb-4">
             About ikman
-          </h6>
-          <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto">
+          </h5>
 
           <ul class="list-unstyled">
             <li class="my-2">

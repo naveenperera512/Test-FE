@@ -2,7 +2,7 @@
   <div>
     <div class="container">
 
-      <div class="row">
+      <div class="row card mt-2 shadow">
         <div>
           <div class="row mb-3">
             <div>

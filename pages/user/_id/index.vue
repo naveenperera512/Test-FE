@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-      <div class="row">
+      <div class="row card mt-2 shadow">
         <div>
           <div class="row mb-3">
             <div>
@@ -9,7 +9,7 @@
                   <div>
                     <div class="row mb-3">
                       <div>
-                        <div class="p-2 mb-lg-0 ml-5">
+                        <div class="p-2 ml-5">
                           <div>
                             <nuxt-link class="btn bg-info ml-2" to="/user">
                               Back
@@ -55,51 +55,6 @@
                           </table>
                         </div>
                       </div>
-                    </div>
-                    <div class="row justify-content-center ml-5">
-                      <div>
-                        <nuxt-link class="btn bg-info ml-2" to="/employeer">
-                          Back
-                        </nuxt-link>
-                      </div>
-                      <table class="table table-borderless table-sm mb-0">
-                        <tbody>
-                        <tr>
-                          <th scope="row">
-                            Employeer:
-                          </th>
-                          <td>{{ vacancies.employee_name }}</td>
-                        </tr>
-                        <th scope="row">
-                          Job type:
-                        </th>
-                        <td>{{ jobs.name }}</td>
-                        <tr>
-                          <th scope="row">
-                            Aplication deadline:
-                          </th>
-                          <td>2021-10-31</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">
-                            Location:
-                          </th>
-                          <td>{{ district.name }} , {{ cities.name }}</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">
-                            Email address:
-                          </th>
-                          <td>{{ vacancies.employee_email }}</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">
-                            Phone :
-                          </th>
-                          <td>{{ vacancies.telephone }}</td>
-                        </tr>
-                        </tbody>
-                      </table>
                     </div>
                   </div>
                 </div>
