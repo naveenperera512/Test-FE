@@ -2,13 +2,6 @@
   <div>
     <div class="container">
 
-<<<<<<< HEAD
-      <div class="row">
-        <div>
-          <div class="row mb-3">
-            <div>
-              <div class="p-2 mb-lg-0 ml-5">
-=======
         <div class="row">
           <div>
             <div class="row mb-3">
@@ -61,7 +54,6 @@
               </div>
             </div>
               <div class="row justify-content-center ml-5">
->>>>>>> 492b84a0b7036de62846b08e0788a1df453e0c11
                 <div>
                   <nuxt-link to="/employeer" class="btn bg-info ml-2">
                     Back
@@ -115,9 +107,6 @@
           </div>
         </div>
       </div>
-
-    </div>
-  </div>
 </template>
 <script>
 export default {
