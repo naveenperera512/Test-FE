@@ -79,9 +79,13 @@ export default {
                 </template>
 
                 <b-dropdown-item href="#">
-                    <i class="remixicon-account-circle-line"></i>
+                    <nuxt-link :to="{ path: '/admin/settings'}">
+                     <i class="remixicon-account-circle-line"></i>
                     <span>Settings</span>
+                    </nuxt-link>
                 </b-dropdown-item>
+
+                
 
                 <b-dropdown-divider></b-dropdown-divider>
                 <a class="dropdown-item" @click="logout" >
