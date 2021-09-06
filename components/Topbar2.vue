@@ -20,12 +20,14 @@ export default {}
       >
         <span class="navbar-toggler-icon text-white" />
       </button>
-      <a class="navbar-brand text-white bx-bold" href="#"><h2>JOBS LK User</h2></a>
+      <nuxt-link to="/user" class="navbar-brand">
+        <h2>JOBS LK User</h2>
+      </nuxt-link>
       <div class="d-flex justify-content-end">
         <nuxt-link :to="{ path: '/auth/login'}">
           <h5 class="collapse navbar-collapse">
-            <img class="mr-1 mt-2" height="30" src="~/assets/images/users/user.png" width="30">
-            <span class="text-white mt-3 mr-3">Login</span>
+            <img class="mt-n1" height="30" src="~/assets/images/users/user.png" width="30">
+            <span class="p-2 text-white">Login</span>
           </h5>
         </nuxt-link>
 
@@ -53,13 +55,13 @@ export default {}
       >
         <span class="navbar-toggler-icon text-white" />
       </button>
-      <nuxt-link to="/employeer" class="navbar-brand text-white bx-bold">
+      <nuxt-link to="/employeer" class="navbar-brand">
         <h2>JOBS LK Employee</h2>
       </nuxt-link>
       <div class="d-flex justify-content-end">
         <nuxt-link
           :to="{ path: '/employeer/myaccount'}"
-          class="p-2 mt-2 mr-3 text-white"
+          class="p-2 mr-3 text-white"
         >
           <h5 class="collapse navbar-collapse">
             <img class="mr-1 mt-n1" height="30" width="30" src="~/assets/images/users/user.png">
@@ -69,7 +71,7 @@ export default {}
 
         <div class="p-2">
           <div id="navbarScroll" class="collapse navbar-collapse">
-            <nuxt-link :to="{ path: '/employeer/add-post'}">
+            <nuxt-link :to="{ path: '/employeer/myaccount'}">
               <button class="btn btn-warning" type="button">
                 POST YOUR AD
               </button>

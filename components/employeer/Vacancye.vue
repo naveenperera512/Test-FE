@@ -52,6 +52,7 @@
     </div>
     <div class="container">
       <b-form v-for="(vacancy, index) in vacancies.data" :key="index" >
+        <nuxt-link :to="'/employeer/' + vacancy.id">
         <div class="card mt-2">
           <div class="card-body pb-1">
             <div class="row">
@@ -76,16 +77,12 @@
                   <div class="alert alert-primary" role="alert">
                     {{ vacancy.jobs.name }}
                   </div>
-                  <div>
-                    <nuxt-link :to="'/employeer/' + vacancy.id">
-                      <h1>{{ vacancy.id }}</h1>
-                    </nuxt-link>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        </nuxt-link>
       </b-form>
       <div class="d-flex justify-content-center">
         <LaravelVuePagination :data="vacancies" @pagination-change-page="getVacancies" class="pagination pagination-rounded">

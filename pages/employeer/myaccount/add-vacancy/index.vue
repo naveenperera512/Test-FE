@@ -52,6 +52,16 @@
                     </option>
                   </select>
                 </b-form-group>
+                <b-form-group class="col-md-8" label="Select City" label-for="inputState">
+                  <select id="inputState" class="form-control">
+                    <option>
+                      Please select an option
+                    </option>
+                    <option v-for="(city, index) in cities.data" :key="index">
+                      {{ city.name }}
+                    </option>
+                  </select>
+                </b-form-group>
                 </div>
 
                       <div class="row">
@@ -133,13 +143,15 @@ export default {
     return {
       categories: {},
       jobtypes: {},
-      districts: {}
+      districts: {},
+      cities: {}
     }
   },
   created () {
     this.getDistrictList()
     this.getCategorytList()
     this.getJobTypeList()
+    this.getCityList()
   },
 
   methods: {
@@ -171,6 +183,17 @@ export default {
         this.$axios.get('api/districts')
           .then((response) => {
             this.districts = (response.data)
+          })
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log(error)
+      }
+    },
+    getCityList () {
+      try {
+        this.$axios.get('api/cities')
+          .then((response) => {
+            this.cities = (response.data)
           })
       } catch (error) {
         // eslint-disable-next-line no-console
