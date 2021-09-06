@@ -19,14 +19,10 @@
 import JobType from '@/components/admin/JobType'
 
 export default {
-  head() {
-    return {
-      title: `${this.title}`,
-    };
-  },
+
   data() {
     return {
-      title: `${this.title}`
+      title: `Job Type List`
     }
   },
   components:{

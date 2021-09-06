@@ -6,7 +6,7 @@
           <div class="col-sm-12">
             <div class="float-sm-right">
               <nuxt-link class="btn btn-info mb-2" to="/admin/add-jobtype/add">
-                <i class="mdi mdi-plus-circle mr-1" /> Add Job Types
+                <i class="mdi mdi-plus-circle mr-1" /> Add Categories
               </nuxt-link>
             </div>
           </div><!-- end col-->
