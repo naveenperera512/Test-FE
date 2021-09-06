@@ -55,7 +55,7 @@
                                     {{ errors.password[0] }}
                                   </b-form-invalid-feedback>
                               </b-form-group>
-          
+
                               <!-- checkbox  -->
                               <div class="form-group mb-3">
                                   <div class="custom-control custom-checkbox">
@@ -71,8 +71,8 @@
                       </b-form>
                     </div>
             </div>
-            
-          <!-- forgot password & sign up  -->  
+
+          <!-- forgot password & sign up  -->
          <div class="row mt-3">
             <div class="col-12 text-center">
                 <p>
@@ -111,7 +111,7 @@ export default {
         await this.$auth.loginWith('laravelSanctum' , {
           data: this.form
         })
-        await this.$router.replace({path:'/education_content'})
+        await this.$router.replace({path:'/'})
       }catch (error) {
         if(error.response.status === 422) {
           this.errors = error.response.data.errors;
