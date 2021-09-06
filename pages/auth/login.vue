@@ -55,7 +55,7 @@
                                     {{ errors.password[0] }}
                                   </b-form-invalid-feedback>
                               </b-form-group>
-          
+
                               <!-- checkbox  -->
                               <div class="form-group mb-3">
                                   <div class="custom-control custom-checkbox">
@@ -71,8 +71,8 @@
                       </b-form>
                     </div>
             </div>
-            
-          <!-- forgot password & sign up  -->  
+
+          <!-- forgot password & sign up  -->
          <div class="row mt-3">
             <div class="col-12 text-center">
                 <p>
