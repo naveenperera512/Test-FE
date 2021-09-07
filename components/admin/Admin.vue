@@ -47,13 +47,39 @@
               </p>
             </template>
             <template #cell(action)="data">
-              <ul class="list-inline table-action m-0">
-                <li class="list-inline-item mr-3">
-                  <button v-on:click="AdminList(data.item.id) "  class="bg-info border-0">
-                    Edit
-                  </button>
-                </li>
-              </ul>
+              <div v-if="data.item.id == 1 ">
+                <ul class="list-inline table-action m-0">
+                  <li class="list-inline-item mr-3">
+                    <button  class="bg-danger border-0 text-white">
+                      <div class="mx-1">
+                        Super Admin
+                      </div>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div v-if=" $auth.user.id == data.item.id && data.item.id != 1 ">
+                <ul class="list-inline table-action m-0">
+                  <li class="list-inline-item mr-3">
+                    <button  class="bg-warning border-0 text-white">
+                      <div class="mx-2">
+                        My Account
+                      </div>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div v-if=" $auth.user.id != data.item.id && data.item.id != 1 ">
+                <ul class="list-inline table-action m-0">
+                  <li class="list-inline-item mr-3 ">
+                    <button v-on:click="AdminList(data.item.id) "  class="bg-info border-0 text-white ">
+                      <div class="mx-4">
+                        Edit
+                      </div>
+                    </button>
+                  </li>
+                </ul>
+              </div>
             </template>
           </b-table>
         </div>

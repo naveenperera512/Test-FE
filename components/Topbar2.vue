@@ -54,12 +54,12 @@ export default {}
         <span class="navbar-toggler-icon text-white" />
       </button>
       <nuxt-link to="/employeer" class="navbar-brand text-white bx-bold">
-        <h2>JOBS LK Employee</h2>
+        <h2>SL JOBS</h2>
       </nuxt-link>
       <div class="d-flex justify-content-end">
         <nuxt-link
           :to="{ path: '/employeer/myaccount'}"
-          class="p-2 mt-2 mr-3 text-white"
+          class="p-2  mr-3 text-white"
         >
           <h5 class="collapse navbar-collapse">
             <img class="mr-1 mt-n1" height="30" width="30" src="~/assets/images/users/user.png">
@@ -68,8 +68,8 @@ export default {}
         </nuxt-link>
 
         <div class="p-2">
-          <div id="navbarScroll" class="collapse navbar-collapse">
-            <nuxt-link :to="{ path: '/employeer/add-post'}">
+          <div class="collapse navbar-collapse">
+            <nuxt-link :to="{ path: '/employeer/myaccount/add-vacancy'}">
               <button class="btn btn-warning" type="button">
                 POST YOUR AD
               </button>

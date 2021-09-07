@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container mt-3">
     <div class="row">
         <div class="col-12">
         <div class="card">
@@ -17,14 +17,9 @@
                 nav-wrapper-class="col-sm-3"
                 content-class="pt-0"
               >
-                <b-tab title="Vacancy">
+                <b-tab title="My Vacancy List">
                   <b-card-text>
-                    <Vacancy />
-                    </b-card-text>
-                </b-tab>
-                <b-tab title="Vacancy List">
-                  <b-card-text>
-                    <VacancyList />
+                    <MyVacancyList />
                     </b-card-text>
                 </b-tab>
                 <b-tab title="Settings">
@@ -41,9 +36,11 @@
   </div>
 </template>
 <script>
+import MyVacancyList from './myvacancy-list/index'
 import Settings from './settings/index'
 export default {
   components: {
+    MyVacancyList,
     Settings
   },
   methods: {}
