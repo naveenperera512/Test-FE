@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="container">
-      <b-form v-for="(vacancy, index) in vacancies.data" :key="index" >
-        <nuxt-link :to="'/admin/pending-vacancy-list/' + vacancy.id">
+      <b-form v-for="(vacancy, index) in vacancies.data" :key="index"  v-if="vacancy.user_id == $auth.user.id ">
+        <nuxt-link :to="'/employeer/myaccount/myvacancy-list/' + vacancy.id">
           <div class="card mt-2">
             <div class="card-body pb-1">
               <div class="row">
@@ -28,6 +28,20 @@
                       {{ vacancy.jobs.name }}
                     </div>
                   </div>
+                  <div v-if="vacancy.is_approved == 0 ">
+                    <button v-on:click="peding(vacancy.id) "  class="bg-warning border-0">
+                      <div class="mx-4 text-white">
+                        pending
+                      </div>
+                    </button>
+                  </div>
+                  <div v-else>
+                    <button v-on:click=""  class="bg-success border-0">
+                      <div class="mx-4 text-white">
+                        Approved
+                      </div>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -52,6 +66,9 @@ export default {
   data() {
     return {
       vacancies: {},
+      categories: {},
+      jobtypes: {},
+      districts: {}
     }
   },
   components:{
@@ -63,7 +80,7 @@ export default {
   methods: {
     getVacancies(page=1) {
       try {
-        this.$axios.get('api/admin/pendingVacancies?page=' + page)
+        this.$axios.get('api/employee/vacancies?page=' + page)
           .then((response) => {
             this.vacancies = (response.data)
             console.log(this.vacancies)
@@ -72,8 +89,7 @@ export default {
         // eslint-disable-next-line no-console
         console.log(error)
       }
-    },
-
+    }
   }
 }
 </script>
