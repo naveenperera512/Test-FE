@@ -229,26 +229,24 @@ export default {
 
 <template>
 <!-- ========== Left Sidebar Start ========== -->
-<div class="left-side-menu">
+<div class="left-side-menu ">
     <!-- LOGO -->
     <div class="logo-box">
-        <nuxt-link to="/" class="logo logo-dark text-center">
+        <!-- <nuxt-link to="/" class="logo logo-dark text-center">
             <span class="logo-sm">
                 <img src="~/assets/images/logo-new.png" alt height="30" />
-                <!-- <span class="logo-lg-text-light">Minton</span> -->
             </span>
             <span class="logo-lg">
                 <img src="~/assets/images/logo-new.png" alt height="30" />
-                <!-- <span class="logo-lg-text-light">M</span> -->
             </span>
-        </nuxt-link>
+        </nuxt-link> -->
 
         <nuxt-link to="/" class="logo logo-light text-center">
             <span class="logo-sm">
-                <img src="~/assets/images/favicon.png" alt height="30" />
+                <img src="~/assets/images/logo-sm.png" alt height="30" />
             </span>
             <span class="logo-lg">
-                <img src="~/assets/images/logo-white.png" alt height="30" />
+                <img src="~/assets/images/logo-white.png" alt height="50" />
             </span>
         </nuxt-link>
     </div>

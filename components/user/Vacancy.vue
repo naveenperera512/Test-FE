@@ -43,6 +43,7 @@
                 </b-form-group>
               </div>
             </div>
+
           </div>
         </div>
       </b-col>
@@ -53,7 +54,7 @@
   <div class="container">
     <b-form v-for="(vacancy, index) in vacancies.data" :key="index" >
       <nuxt-link :to="'/user/' + vacancy.id">
-      <div class="card mt-2 shadow">
+      <div class="card mt-2">
         <div class="card-body pb-1">
           <div class="row">
             <div class="col-md-6">
@@ -78,12 +79,13 @@
                 <div class="alert alert-success" role="alert">
                   {{ vacancy.jobs.name }}
                 </div>
+                <div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
       </nuxt-link>
     </b-form>
     <div class="d-flex justify-content-center">

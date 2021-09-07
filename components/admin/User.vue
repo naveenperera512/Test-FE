@@ -1,16 +1,7 @@
 <template>
   <div>
-    <div class="row">
-      <div class="col-12">
-        <div class="row mb-2">
-          <div class="col-sm-12">
-            <div class="float-sm-right">
-              <nuxt-link class="btn btn-info mb-2" to="/admin/jobType/add">
-                <i class="mdi mdi-plus-circle mr-1" /> Add Job Types
-              </nuxt-link>
-            </div>
-          </div><!-- end col-->
-        </div>
+    <div class="row card mt-3">
+      <div class="col-12 card-body">
         <div class="row mb-2">
           <!-- Search -->
           <div class="col-sm-12 col-md-6">
@@ -35,7 +26,7 @@
             :fields="fields"
             :filter="filter"
             :filter-included-fields="filterOn"
-            :items="jobytpes.data"
+            :items="users.data"
             :per-page="perPage"
             :sort-by.sync="sortBy"
             :sort-desc.sync="sortDesc"
@@ -47,22 +38,19 @@
           >
             <template #cell(name)="data">
               <p class="m-0 d-inline-block align-middle">
-                {{ data.item.id }} )
                 {{ data.item.name }}
+              </p>
+            </template>
+            <template #cell(email)="data">
+              <p class="m-0 d-inline-block align-middle">
+                {{ data.item.email }}
               </p>
             </template>
             <template #cell(action)="data">
               <ul class="list-inline table-action m-0">
                 <li class="list-inline-item mr-3">
-                  <nuxt-link :to="'/admin/jobtype/' +  data.item.id ">
-                    <a href="javascript:void(0);" class="action-icon">
-                      <i class="mdi mdi-square-edit-outline"></i></a>
-                  </nuxt-link>
-                </li>
-                <li class="list-inline-item">
-                  <button v-on:click="DeletejobTypes(data.item.id ) "  class="bg-white border-0">
-                    <a href="javascript:void(0);" class="action-icon">
-                      <i class="mdi mdi-delete"></i></a>
+                  <button v-on:click="UserList(data.item.id) "  class="bg-info border-0">
+                    Edit
                   </button>
                 </li>
               </ul>
@@ -102,11 +90,11 @@ export default {
   data () {
     return {
       paginats: {},
-      jobytpes: {},
+      users: {},
+      title: 'Products List',
       totalRows: 1,
       currentPage: 1,
       perPage: 10,
-      title: 'Products List',
       items: [],
       pageOptions: [10, 20, 50, 100],
       filter: null,
@@ -114,11 +102,18 @@ export default {
       sortBy: 'age',
       sortDesc: false,
       fields: [{
-          key: 'name',
-          label: 'Name'
+        key: 'name',
+        label: 'Name'
+      },
+        {
+          key: 'email',
+          label: 'Email'
         },
         'action'
-      ]
+      ],
+      form: {
+        is_admin: '1',
+      }
     }
   },
   computed: {
@@ -126,30 +121,29 @@ export default {
      * Total no. of records
      */
     rows() {
-      return this.jobytpes.length;
+      return this.users.length;
     }
   },
   created () {
-    this.getProductList()
+    this.getUserList()
   },
   methods: {
-    getProductList (page =1) {
-      this.$axios.get('api/admin/jobTypes?page=' + page)
+    getUserList (page =1) {
+      this.$axios.get('api/admin/users?page=' + page)
         .then((response) => {
-          this.jobytpes = (response.data)
+          this.users = (response.data)
           this.paginats = (response.data).meta
-          console.log(this.jobytpes)
         })
         .catch((error) => {
           // eslint-disable-next-line no-console
           console.log(error)
         })
     },
-    async DeletejobTypes(id){
+    async UserList(id) {
       try {
-        await this.$axios.delete(`api/admin/jobTypes/` + id)
-        await this.$router.replace({ path: '/admin/' })
-        await this.$router.replace({ path: '/admin/jobType' })
+        await this.$axios.put(`api/admin/users/` + id, this.form)
+        await this.$router.replace({path: '/admin'})
+        await this.$router.replace({path: '/admin/user-management'})
       } catch (error) {
         if (error.response.status === 422) {
           this.errors = error.response.data.errors

@@ -7,7 +7,7 @@ export default {}
 
 <!--  User Top Bar-->
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-info ">
+  <nav class="navbar navbar-expand-lg navbar-light bg-info">
     <div v-if="!$auth.loggedIn" class="container-fluid">
       <button
         aria-controls="navbarScroll"
@@ -24,10 +24,11 @@ export default {}
         <h2>JOBS LK User</h2>
       </nuxt-link>
       <div class="d-flex justify-content-end">
-        <nuxt-link :to="{ path: '/auth/login'}">
+        <nuxt-link :to="{ path: '/auth/login'}"
+        class="p-2 mr-2 text-white">
           <h5 class="collapse navbar-collapse">
-            <img class="mt-n1" height="30" src="~/assets/images/users/user.png" width="30">
-            <span class="p-2 text-white">Login</span>
+            <img class="mr-1 mt-n1" height="30" width="30" src="~/assets/images/users/user.png">
+            <span class="text-white">Login</span>
           </h5>
         </nuxt-link>
 
@@ -61,11 +62,11 @@ export default {}
       <div class="d-flex justify-content-end">
         <nuxt-link
           :to="{ path: '/employeer/myaccount'}"
-          class="p-2 mr-3 text-white"
+          class="p-2 mr-2 text-white"
         >
           <h5 class="collapse navbar-collapse">
             <img class="mr-1 mt-n1" height="30" width="30" src="~/assets/images/users/user.png">
-            <span>My Account</span>
+            <span class="text-white">My Account</span>
           </h5>
         </nuxt-link>
 
