@@ -1,8 +1,7 @@
 <template>
-  <div class="container mt-3">
+  <div class="container">
     <div class="row">
       <div class="col-12">
-        <div class="card">
           <div class="card-body">
             <div class="d-flex justify-content-center">
               <NuxtLink :to="{ path: '/employeer/myaccount/add-vacancy'}">
@@ -23,7 +22,6 @@
             </b-card>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </template>
