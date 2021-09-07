@@ -56,7 +56,7 @@ export default {
         },
               logout: async function () {
         await this.$auth.logout()
-        await this.$router.replace({path: '/'})
+        await this.$router.replace({path: '/user'})
       }
     },
 };

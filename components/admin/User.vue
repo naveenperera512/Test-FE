@@ -48,9 +48,11 @@
             </template>
             <template #cell(action)="data">
               <ul class="list-inline table-action m-0">
-                <li class="list-inline-item mr-3">
+                <li class="list-inline-item ">
                   <button v-on:click="UserList(data.item.id) "  class="bg-info border-0">
-                    Edit
+                    <div class="mx-4 text-white">
+                      Edit
+                    </div>
                   </button>
                 </li>
               </ul>
@@ -58,7 +60,7 @@
           </b-table>
         </div>
         <div class="row">
-          <div class="col-sm-12 col-md-6">
+          <div class="col-sm-12 col-md-12">
             <div id="tickets-table_length" class="dataTables_length">
               <label class="d-inline-flex align-items-center">
                 Display&nbsp;
@@ -66,7 +68,7 @@
               </label>
             </div>
           </div>
-          <div class="col-sm-12 col-md-6">
+          <div class="col-sm-12 col-md-12">
             <div class="dataTables_paginate paging_simple_numbers float-right">
               <ul class="pagination pagination-rounded">
                 <!-- pagination -->

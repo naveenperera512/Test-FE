@@ -9,7 +9,7 @@
                   <div>
                     <div class="row justify-content-center ml-5">
                       <div>
-                        <nuxt-link class="btn bg-info ml-2" to="/employeer">
+                        <nuxt-link class="btn bg-info ml-2" to="/user">
                           Back
                         </nuxt-link>
                       </div>
