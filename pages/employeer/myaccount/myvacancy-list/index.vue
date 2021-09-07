@@ -14,10 +14,12 @@
               </NuxtLink>
             </div>
             <h4 class="header-title mb-3">
-              My Profile
+              My Vacancy List
             </h4><h4 class="header-title mb-3" />
             <b-card no-body class="shadow-none border-0">
-
+              <div>
+                <MyVacancye />
+              </div>
             </b-card>
           </div>
         </div>
@@ -27,11 +29,19 @@
 </template>
 <script>
 import AddVacancy from '../add-vacancy/index'
-export default {
-  components: {
-    AddVacancy,
+import MyVacancye from '@/components/employeer/MyVacancy'
 
+export default {
+  data() {
+    return {
+      vacancies: {}
+    }
   },
-  methods: {}
+  components:{
+    AddVacancy,
+    MyVacancye
+  },
+  methods: {
+  }
 }
 </script>
