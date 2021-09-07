@@ -129,7 +129,7 @@ export default {
   },
   methods: {
     getAdminList(page = 1) {
-      this.$axios.get('api/admin/users?page=' + page)
+      this.$axios.get('api/admin/admins?page=' + page)
         .then((response) => {
           this.users = (response.data)
           this.paginats = (response.data).meta

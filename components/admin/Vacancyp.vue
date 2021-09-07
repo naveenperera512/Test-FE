@@ -63,7 +63,7 @@ export default {
   methods: {
     getVacancies(page=1) {
       try {
-        this.$axios.get('api/admin/vacancies?page=' + page)
+        this.$axios.get('api/admin/pendingVacancies?page=' + page)
           .then((response) => {
             this.vacancies = (response.data)
             console.log(this.vacancies)
