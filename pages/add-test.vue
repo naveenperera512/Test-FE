@@ -15,28 +15,16 @@
             About the job
           </h6>
 
-          <b-form @submit.prevent="vacancies">
-
-            <!-- title-->
-            <b-form-group label-for="title">
-              <template #label>
-                Title
-              <span class="text-danger">*</span>
-              </template>
-              <b-form-input
-                id="title"
-                v-model="form.title"
-                type="text"
-                :state="errors && errors.title ? false : null"
-                placeholder="Some text value..."
-              />
-              <b-form-invalid-feedback
-                v-if="errors && errors.title"
-                id="title-feedback"
-              >
-                {{ errors.title[0] }}
-              </b-form-invalid-feedback>
-            </b-form-group>
+          <form>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="title">Title</label>
+                  <span class="text-danger">*</span>
+                  <input id="title" class="form-control" placeholder="Some text value..." type="text">
+                </div>
+              </div>
+            </div>
 
             <div class="row">
               <b-form-group class="col-md-12" label="Select Job Category" label-for="inputState">
@@ -59,7 +47,7 @@
                   </option>
                 </select>
               </b-form-group>
-              <b-form-group class="col-md-6" label="Select District" label-for="inputState">
+              <b-form-group class="col-md-12" label="Select District" label-for="inputState">
                 <select class="form-control">
                   <option>
                     Please select an option
@@ -69,7 +57,7 @@
                   </option>
                 </select>
               </b-form-group>
-              <b-form-group class="col-md-6" label="Select City" label-for="inputState">
+              <b-form-group class="col-md-12" label="Select City" label-for="inputState">
                 <select class="form-control">
                   <option>
                     Please select an option
@@ -81,23 +69,6 @@
               </b-form-group>
             </div>
 
-            
-          <h6 class="sub-header">
-            Date of expiry
-          </h6>
-            
-            <!-- Date-->
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label  label="Date" label-cols-lg="2" label-cols-sm="2" label-for="date">Date <span class="text-danger">*</span></label>
-                  <b-form-input id="date" type="date" value="2019-08-19"/>
-                </div>
-              </div>
-            </div>
-
-            
-            <!-- description -->
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group mt-3">
@@ -107,8 +78,7 @@
                 </div>
               </div>
             </div>
-            
-            <!-- file upload -->
+
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group mt-3">
@@ -116,6 +86,7 @@
                   <p class="text-muted font-13 m-b-30">DropzoneJS is an open source library that provides drag’n’drop
                     file
                     uploads with image previews.</p>
+                  <!-- file upload -->
                   <vue-dropzone id="dropzone" ref="myVueDropzone" :options="dropzoneOptions" :use-custom-slot="true">
                     <div class="dz-message needsclick">
                       <i class="h1 text-muted ri-upload-cloud-2-line"></i>
@@ -129,33 +100,27 @@
               </div>
             </div>
 
-            
-          <h6 class="sub-header">
-            Employee details
-          </h6>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label  label="Date" label-cols-lg="2" label-cols-sm="2" label-for="date">Date</label>
+                  <b-form-input id="date" type="date" value="2019-08-19"/>
+                </div>
+              </div>
+            </div>
+
+            <h6 class="sub-header">
+              About the employeer
+            </h6>
 
             <div class="row">
-
-            <!-- employee name-->
-            <b-form-group class="col-md-6" label-for="input-employee_name">
-              <template #label>
-                Employeer name
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="employeer-name">Employeer name</label>
                   <span class="text-danger">*</span>
-              </template>
-              <b-form-input
-                id="input-employee_name"
-                v-model="form.employee_name"
-                type="text"
-                :state="errors && errors.employee_name ? false : null"
-                placeholder="Enter Name"
-              />
-              <b-form-invalid-feedback
-                v-if="errors && errors.employee_name"
-                id="input-employee_name-feedback"
-              >
-                {{ errors.employee_name[0] }}
-              </b-form-invalid-feedback>
-            </b-form-group>
+                  <input id="employeer-name" class="form-control" placeholder="Enter name" type="text">
+                </div>
+              </div>
             </div>
 
             <h6 class="sub-header">
@@ -163,60 +128,31 @@
             </h6>
 
             <div class="row">
-
-            <!-- email address-->
-            <b-form-group class="col-md-6" label-for="employee-email">
-              <template #label>
-                Email Address
-                    <span class="text-danger">*</span>
-              </template>
-              <b-form-input
-                id="employee-email"
-                v-model="form.employee_email"
-                type="email"
-                :state="errors && errors.employee_email ? false : null"
-                placeholder="Enter your email"
-              />
-              <b-form-invalid-feedback
-                v-if="errors && errors.employee_email"
-                id="employee-email-feedback"
-              >
-                {{ errors.employee_email[0] }}
-              </b-form-invalid-feedback>
-            </b-form-group>
-
-            <!-- telephone-->
-            <b-form-group class="col-md-6" label-for="telephone">
-              <template #label>
-                Telephone
-                    <span class="text-danger">*</span>
-              </template>
-              <b-form-input
-                id="telephone"
-                v-model="form.telephone"
-                type="email"
-                :state="errors && errors.telephone ? false : null"
-                placeholder="(xx) xxx xxxx xxx"
-              />
-              <b-form-invalid-feedback
-                v-if="errors && errors.telephone"
-                id="telephone-feedback"
-              >
-                {{ errors.telephone[0] }}
-              </b-form-invalid-feedback>
-            </b-form-group>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="billing-email-address">Email Address
+                    <span class="text-danger">*</span></label>
+                  <input id="billing-email-address" class="form-control" placeholder="Enter your email" type="email">
+                </div>
+              </div>
             </div>
 
-            <!-- button -->
-            <div class="form-group mb-0 d-flex justify-content-end">
-              <button
-                class="btn btn-success "
-                type="submit"
-              >
-                Post vacancy
-              </button>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="billing-phone">Phone <span class="text-danger">*</span></label>
+                  <input id="billing-phone" class="form-control" placeholder="(xx) xxx xxxx xxx" type="text">
+                </div>
+              </div>
             </div>
-          </b-form>
+          </form>
+        </div>
+        <div class="col-lg-12">
+          <div class="d-flex justify-content-end">
+            <button class="btn btn-success " type="button">
+              <i class="mdi mdi-truck-fast mr-1"/> Post vacancy
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -235,12 +171,6 @@ export default {
   },
   data() {
     return {
-      form: {
-        title: '',
-        employee_name: '',
-        employee_email: '',
-        telephone: ''
-      },
       categories: {},
       jobtypes: {},
       districts: {},
@@ -312,14 +242,6 @@ export default {
   },
 
   methods: {
-    vacancies() {
-
-      try{
-        this.$axios.post('vacancies',this.form)
-      }catch (error) {
-        console.log(error)
-      }
-    },
 
     getCategorytList() {
       try {

@@ -246,7 +246,7 @@ export default {
                 <img src="~/assets/images/logo-sm.png" alt height="30" />
             </span>
             <span class="logo-lg">
-                <img src="~/assets/images/logo-white.png" alt height="50" />
+                <img src="~/assets/images/logo-white.png" alt height="35" />
             </span>
         </nuxt-link>
     </div>
