@@ -194,7 +194,7 @@
               <b-form-input
                 id="telephone"
                 v-model="form.telephone"
-                type="email"
+                type="number"
                 :state="errors && errors.telephone ? false : null"
                 placeholder="(xx) xxx xxxx xxx"
               />
@@ -236,10 +236,10 @@ export default {
   data() {
     return {
       form: {
-        title: '',
-        employee_name: '',
-        employee_email: '',
-        telephone: ''
+        // title: '',
+        // employee_name: '',
+        // employee_email: '',
+        telephone: '0710000001'
       },
       categories: {},
       jobtypes: {},
@@ -312,12 +312,14 @@ export default {
   },
 
   methods: {
-    vacancies() {
-
-      try{
-        this.$axios.post('vacancies',this.form)
-      }catch (error) {
-        console.log(error)
+    async vacancies () {
+      try {
+        await this.$axios.post('api/employee/vacancies', this.form)
+        await this.$router.replace({ path: '/employeer/myaccount' })
+      } catch (error) {
+        if (error.response.status === 422) {
+          this.errors = error.response.data.errors
+        }
       }
     },
 

@@ -11,7 +11,7 @@
           <div class="">
             <div class=" mb-3 ">
               <div class="form-row d-flex justify-content-center">
-                <b-form-group class="col-md-3 text-white " label="Select Job Category" label-for="inputState">
+                <b-form-group class="col-md-3 text-white" label="Select Job Category" label-for="inputState">
                   <select class="form-control ">
                     <option>
                       Please select an option
@@ -52,9 +52,11 @@
       />
     </div>
   <div class="container">
+      <div class="row card mt-3 shadow rounded-3">
+        <div class="mr-4 ml-4 mt-3 mb-3">
     <b-form v-for="(vacancy, index) in vacancies.data" :key="index" >
       <nuxt-link :to="'/user/' + vacancy.id">
-      <div class="card mt-2">
+      <div class="card mt-2 shadow rounded-3">
         <div class="card-body pb-1">
           <div class="row">
             <div class="col-md-6">
@@ -94,8 +96,10 @@
         <span slot="next-nav">Next &gt;</span>
       </LaravelVuePagination>
     </div>
-  </div>
-  </div>
+    </div>
+                </div>
+                </div>
+              </div>
 </template>
 
 <script>
