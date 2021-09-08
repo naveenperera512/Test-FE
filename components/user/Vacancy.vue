@@ -11,32 +11,26 @@
           <div class="">
             <div class=" mb-3 ">
               <div class="form-row d-flex justify-content-center">
-                <b-form-group class="col-md-3 text-white" label="Select Job Category" label-for="inputState">
-                  <select class="form-control ">
-                    <option>
-                      Please select an option
-                    </option>
-                    <option v-for="(category, index) in categories" :key="index">
+                <b-form-group class="col-md-3 text-white " label="Select Job Category" label-for="inputState">
+                  <select v-model="category_id" class="form-control ">
+                    <option value="">-- Please select an option --</option>
+                    <option v-for="category in categories" :value="category.id">
                       {{ category.name }}
                     </option>
                   </select>
                 </b-form-group>
                 <b-form-group class="col-md-3 text-white" label="Select Job Type" label-for="inputState">
-                  <select class="form-control">
-                    <option>
-                      Please select an option
-                    </option>
-                    <option v-for="(jobtype, index) in jobtypes" :key="index">
+                  <select v-model="job_type_id" class="form-control">
+                    <option value="">-- Please select an option --</option>
+                    <option v-for="jobtype in jobtypes" :value="jobtype.id">
                       {{ jobtype.name }}
                     </option>
                   </select>
                 </b-form-group>
                 <b-form-group class="col-md-3 text-white" label="Select District" label-for="inputState">
-                  <select class="form-control">
-                    <option>
-                      Please select an option
-                    </option>
-                    <option v-for="(district, index) in districts" :key="index">
+                  <select  v-model="district_id" class="form-control">
+                    <option value="">-- Please select an option --</option>
+                    <option v-for="district in districts" :value="district.id">
                       {{ district.name }}
                     </option>
                   </select>
@@ -52,36 +46,31 @@
       />
     </div>
   <div class="container">
-      <div class="row card mt-3 shadow rounded-3">
-        <div class="mr-4 ml-4 mt-3 mb-3">
-    <b-form v-for="(vacancy, index) in vacancies.data" :key="index" >
+    <b-form v-for="vacancy in vacancies.data" :key="vacancy.id">
       <nuxt-link :to="'/user/' + vacancy.id">
-      <div class="card mt-2 shadow rounded-3">
+      <div class="card mt-2">
         <div class="card-body pb-1">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-7">
               <div class="ml-2">
-                <h4>
+                <h4 class="bx-bold">
                   {{ vacancy.title }}
                 </h4>
               </div>
-              <div class="ml-3 text text-muted">
+              <div class="ml-3">
                 <p>{{ vacancy.employee_name }}</p>
               </div>
             </div>
-            <div class="col-md-3 mt-3 text-muted">
-              <img class="mt-n1" height="30" src="~/assets/images/marker.png" width="30">
-              {{ vacancy.district.name }} , {{ vacancy.cities.name }}
+            <div class="col-md-2 mt-3">
+              <p>{{ vacancy.district.name }} , {{ vacancy.cities.name }}</p>
             </div>
-            <div class="col-md-3 text-muted">
+            <div class="col-md-3 ">
               <div class="d-flex justify-content-end">
                 {{ vacancy.created_at }}
               </div>
               <div class="d-flex justify-content-end mr-3 mt-2">
-                <div class="alert alert-success" role="alert">
+                <div class="alert alert-primary" role="alert">
                   {{ vacancy.jobs.name }}
-                </div>
-                <div>
                 </div>
               </div>
             </div>
@@ -96,10 +85,8 @@
         <span slot="next-nav">Next &gt;</span>
       </LaravelVuePagination>
     </div>
-    </div>
-                </div>
-                </div>
-              </div>
+  </div>
+  </div>
 </template>
 
 <script>
@@ -111,6 +98,9 @@ export default {
     return {
       vacancies: {},
       categories: {},
+      category_id: '',
+      job_type_id: '',
+      district_id: '',
       jobtypes: {},
       districts: {}
     }
@@ -120,50 +110,55 @@ export default {
   },
   created() {
     this.getVacancies()
-    this.getDistrictList()
-    this.getCategorytList()
-    this.getJobTypeList()
   },
-  methods: {
-    getVacancies(page=1) {
-      try {
-        this.$axios.get('api/vacancies?page=' + page)
-          .then((response) => {
-            this.vacancies = (response.data)
-            console.log(this.vacancies)
-          })
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        console.log(error)
-      }
-    },
-    getCategorytList () {
+  mounted (){
       try {
         this.$axios.get('api/categories')
           .then((response) => {
             this.categories = (response.data).data
-          })
+          });
+        this.getVacancies();
       } catch (error) {
         // eslint-disable-next-line no-console
         console.log(error)
       }
-    },
-    getJobTypeList () {
+    try {
+      this.$axios.get('api/jobTypes')
+        .then((response) => {
+          this.jobtypes = (response.data).data
+        });
+      this.getVacancies();
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error)
+    }
+    try {
+      this.$axios.get('api/districts')
+        .then((response) => {
+          this.districts = (response.data).data
+        });
+      this.getVacancies();
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error)
+    }
+
+  },
+  watch: {
+    category_id(value) { this.getVacancies();},
+    job_type_id(value) { this.getVacancies();},
+    district_id(value) { this.getVacancies();}
+  },
+  methods: {
+    getVacancies(page=1) {
       try {
-        this.$axios.get('api/jobTypes')
+        this.$axios.get('api/vacancies?page=' + page
+          + '&category_id=' + this.category_id
+          + '&job_type_id=' + this.job_type_id
+          + '&district_id=' + this.district_id )
           .then((response) => {
-            this.jobtypes = (response.data).data
-          })
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        console.log(error)
-      }
-    },
-    getDistrictList () {
-      try {
-        this.$axios.get('api/districts')
-          .then((response) => {
-            this.districts = (response.data).data
+            this.vacancies = (response.data)
+            console.log(this.vacancies)
           })
       } catch (error) {
         // eslint-disable-next-line no-console
