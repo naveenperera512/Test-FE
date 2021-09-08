@@ -28,7 +28,7 @@
                     <th scope="row">
                       Aplication deadline:
                     </th>
-                    <td>2021-10-31</td>
+                    <td>{{ vacancies.deadline_date }}</td>
                   </tr>
                   <tr>
                     <th scope="row">
@@ -47,6 +47,12 @@
                       Phone :
                     </th>
                     <td>{{ vacancies.telephone }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      Description:
+                    </th>
+                    <td>{{ vacancies.description }}</td>
                   </tr>
                   </tbody>
                 </table>

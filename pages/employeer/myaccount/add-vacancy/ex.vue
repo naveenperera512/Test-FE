@@ -140,27 +140,7 @@
               </b-form-group>
             </div>
 
-            <!-- Date-->
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label label="Date" label-cols-lg="2" label-cols-sm="2" label-for="deadline_date">Deadline Date <span
-                    class="text-danger">*</span></label>
-                  <b-form-input 
-                  id="deadline_date" 
-                  v-model="form.deadline_date" 
-                  type="date" value="2019-08-19" 
-                  :state="errors && errors.deadline_date ? false : null"
-                  />
-                  <b-form-invalid-feedback
-                  v-if="errors && errors.deadline_date"
-                  id="input-deadline_date-feedback"
-                >
-                  {{ errors.deadline_date[0] }}
-                </b-form-invalid-feedback>
-                </div>
-              </div>
-            </div>
+
 
             <!-- description -->
             <div class="row">
@@ -181,7 +161,7 @@
                   <p class="text-muted font-13 m-b-30">DropzoneJS is an open source library that provides drag’n’drop
                     file
                     uploads with image previews.</p>
-                  <vue-dropzone id="cv_image" ref="cv_image" :options="dropzoneOptions" v-model="form.cv_image" :use-custom-slot="true">
+                  <vue-dropzone id="cv_image" ref="myVueDropzone" :options="dropzoneOptions" v-model="form.cv_image" :use-custom-slot="true">
                     <div class="dz-message needsclick">
                       <i class="h1 text-muted ri-upload-cloud-2-line"></i>
                       <h3>Drop files here or click to upload.</h3>
@@ -305,7 +285,6 @@ export default {
         employee_email: '',
         telephone: '',
         description: '',
-        deadline_date: '',
         // cv_image: ''
       },
       categories: {},
@@ -432,6 +411,7 @@ export default {
         console.log(error)
       }
     }
+
     // template: function () {
     //   return ` <div class="dropzone-previews mt-3">
     //         <div class="card mt-1 mb-0 shadow-none border">
