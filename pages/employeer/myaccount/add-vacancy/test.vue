@@ -97,7 +97,7 @@
                 </template>
                 <b-form-select
                   id="district_id"
-                  v-model="form.district_id"
+                  v-model="district_id = form.district_id"
                   class="form-control "
                   type="text"
                   :state="errors && errors.district_id? false : null">
@@ -272,6 +272,7 @@ export default {
   data() {
     return {
       errors: {},
+      district_id: '',
       form: {
         title: '',
         user_id: '3',
@@ -350,12 +351,42 @@ export default {
   },
 
   created() {
-    this.getDistrictList()
-    this.getCategorytList()
-    this.getJobTypeList()
     this.getCityList()
   },
+  mounted (){
+    try {
+      this.$axios.get('api/categories')
+        .then((response) => {
+          this.categories = (response.data)
+        });
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error)
+    }
+    try {
+      this.$axios.get('api/jobTypes')
+        .then((response) => {
+          this.jobtypes = (response.data)
+        });
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error)
+    }
+    try {
+      this.$axios.get('api/districts')
+        .then((response) => {
+          this.districts = (response.data)
+        });
+      this.getCityList();
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error)
+    }
 
+  },
+  watch: {
+    district_id(value) { this.getCityList();}
+  },
 
   methods: {
     async vacancies () {
@@ -369,43 +400,9 @@ export default {
         }
       }
     },
-
-    getCategorytList() {
-      try {
-        this.$axios.get('api/categories')
-          .then((response) => {
-            this.categories = (response.data)
-          })
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        console.log(error)
-      }
-    },
-    getJobTypeList() {
-      try {
-        this.$axios.get('api/jobTypes')
-          .then((response) => {
-            this.jobtypes = (response.data)
-          })
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        console.log(error)
-      }
-    },
-    getDistrictList() {
-      try {
-        this.$axios.get('api/districts')
-          .then((response) => {
-            this.districts = (response.data)
-          })
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        console.log(error)
-      }
-    },
     getCityList() {
       try {
-        this.$axios.get('api/districts/1/cities')
+        this.$axios.get('api/districts/' + this.district_id +'/cities')
           .then((response) => {
             this.cities = (response.data)
           })

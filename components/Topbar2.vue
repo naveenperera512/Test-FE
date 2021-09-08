@@ -7,7 +7,7 @@ export default {}
 
 <!--  User Top Bar-->
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-info ">
+  <nav class="navbar navbar-expand-lg navbar-light bg-info">
     <div v-if="!$auth.loggedIn" class="container-fluid">
       <button
         aria-controls="navbarScroll"
@@ -21,13 +21,14 @@ export default {}
         <span class="navbar-toggler-icon text-white" />
       </button>
       <nuxt-link to="/user" class="navbar-brand">
-        <h2>JOBS LK User</h2>
+        <h1 class="text-white">~ SL JOBS ~</h1>
       </nuxt-link>
       <div class="d-flex justify-content-end">
-        <nuxt-link :to="{ path: '/auth/login'}">
+        <nuxt-link :to="{ path: '/auth/login'}"
+                   class="p-2 mr-2 text-white">
           <h5 class="collapse navbar-collapse">
-            <img class="mt-n1" height="30" src="~/assets/images/users/user.png" width="30">
-            <span class="p-2 text-white">Login</span>
+            <img class="mr-1 mt-n1" height="30" width="30" src="~/assets/images/user.png">
+            <span class="text-white">Login</span>
           </h5>
         </nuxt-link>
 
@@ -55,8 +56,8 @@ export default {}
       >
         <span class="navbar-toggler-icon text-white" />
       </button>
-      <nuxt-link to="/employeer" class="navbar-brand text-white bx-bold">
-        <h2>SL JOBS</h2>
+      <nuxt-link to="/employeer" class="navbar-brand">
+        <h1 class="text-white">~ SL JOBS ~</h1>
       </nuxt-link>
       <div class="d-flex justify-content-end">
         <nuxt-link
@@ -64,8 +65,8 @@ export default {}
           class="p-2  mr-3 text-white"
         >
           <h5 class="collapse navbar-collapse">
-            <img class="mr-1 mt-n1" height="30" width="30" src="~/assets/images/users/user.png">
-            <span>My Account</span>
+            <img class="mr-1 mt-n1" height="30" width="30" src="~/assets/images/user.png">
+            <span class="text-white">My Account</span>
           </h5>
         </nuxt-link>
 
@@ -80,7 +81,7 @@ export default {}
         </div>
       </div>
     </div>
-     <div v-if="$auth.loggedIn && $auth.user.is_admin === 1 " class="container-fluid">
+    <div v-if="$auth.loggedIn && $auth.user.is_admin === 1 " class="container-fluid">
       <button
         aria-controls="navbarScroll"
         aria-expanded="false"
@@ -100,3 +101,4 @@ export default {}
     </div>
   </nav>
 </template>
+
