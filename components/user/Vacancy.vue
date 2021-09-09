@@ -45,35 +45,6 @@
         md="1"
       />
     </div>
-<<<<<<< HEAD
-  <div class="container">
-    <b-form v-for="vacancy in vacancies.data" :key="vacancy.id">
-      <nuxt-link :to="'/user/' + vacancy.id">
-      <div class="card mt-2">
-        <div class="card-body pb-1">
-          <div class="row">
-            <div class="col-md-7">
-              <div class="ml-2">
-                <h4 class="bx-bold">
-                  {{ vacancy.title }}
-                </h4>
-              </div>
-              <div class="ml-3">
-                <p>{{ vacancy.employee_name }}</p>
-              </div>
-            </div>
-            <div class="col-md-2 mt-3">
-              <p>{{ vacancy.district.name }} , {{ vacancy.cities.name }}</p>
-            </div>
-            <div class="col-md-3 ">
-              <div class="d-flex justify-content-end">
-                {{ vacancy.created_at }}
-              </div>
-              <div class="d-flex justify-content-end mr-3 mt-2">
-                <div class="alert alert-primary" role="alert">
-                  {{ vacancy.jobs.name }}
-                </div>
-=======
     <div class="container">
       <b-form v-for="(vacancy, index) in vacancies.data" :key="index" >
         <nuxt-link :to="'/user/' + vacancy.id">
@@ -104,7 +75,6 @@
                     </div>
                   </div>
                 </div>
->>>>>>> main
               </div>
             </div>
           </div>
@@ -142,47 +112,6 @@ export default {
   },
   created() {
     this.getVacancies()
-<<<<<<< HEAD
-  },
-  mounted (){
-      try {
-        this.$axios.get('api/categories')
-          .then((response) => {
-            this.categories = (response.data).data
-          });
-        this.getVacancies();
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        console.log(error)
-      }
-    try {
-      this.$axios.get('api/jobTypes')
-        .then((response) => {
-          this.jobtypes = (response.data).data
-        });
-      this.getVacancies();
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error)
-    }
-    try {
-      this.$axios.get('api/districts')
-        .then((response) => {
-          this.districts = (response.data).data
-        });
-      this.getVacancies();
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error)
-    }
-
-  },
-  watch: {
-    category_id(value) { this.getVacancies();},
-    job_type_id(value) { this.getVacancies();},
-    district_id(value) { this.getVacancies();}
-  },
-=======
   },
   mounted (){
     try {
@@ -222,7 +151,6 @@ export default {
     job_type_id(value) { this.getVacancies();},
     district_id(value) { this.getVacancies();}
   },
->>>>>>> main
   methods: {
     getVacancies(page=1) {
       try {
@@ -232,10 +160,6 @@ export default {
           + '&district_id=' + this.district_id )
           .then((response) => {
             this.vacancies = (response.data)
-<<<<<<< HEAD
-            console.log(this.vacancies)
-=======
->>>>>>> main
           })
       } catch (error) {
         // eslint-disable-next-line no-console

@@ -3,16 +3,6 @@
     <div class="container">
       <b-form v-for="(vacancy, index) in vacancies.data" :key="index" >
         <nuxt-link :to="'/admin/vacancy-list/' + vacancy.id">
-<<<<<<< HEAD
-        <div class="card mt-2">
-          <div class="card-body pb-1">
-            <div class="row">
-              <div class="col-md-7">
-                <div class="ml-2">
-                  <h4>
-                    {{ vacancy.title }}
-                  </h4>
-=======
           <div class="card mt-2 shadow">
             <div class="card-body pb-1">
               <div class="row">
@@ -25,7 +15,6 @@
                   <div class="ml-3 text text-muted">
                     <p>{{ vacancy.employee_name }}</p>
                   </div>
->>>>>>> main
                 </div>
                 <div class="col-md-3 mt-3 text-muted">
                   <img class="mt-n1" height="30" src="~/assets/images/marker.png" width="30">

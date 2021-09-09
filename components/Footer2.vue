@@ -22,18 +22,11 @@ export default {
   <div class="bg-info text-white">
     <div class="container text-center text-md-left mt-5">
       <div class="row">
-<<<<<<< HEAD
-        <div class="col-md-3 mx-auto mb- mt-4">
-          <h5 class="text-uppercase text-white font-weight-bold mb-4">
-            More form ikman
-          </h5>
-=======
         <div class="col-md-3 mx-auto mb-4 mt-4">
           <h5 class="text-uppercase font-weight-bold text-white">
             More form ikman
           </h5>
           <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto">
->>>>>>> main
 
           <ul class="list-unstyled text-white">
             <li class="my-2">
@@ -52,16 +45,10 @@ export default {
         </div>
 
         <div class="col-md-3 mx-auto mb-4 mt-4">
-<<<<<<< HEAD
-          <h5 class="text-uppercase text-white font-weight-bold mb-4">
-            Help and Support
-          </h5>
-=======
           <h5 class="text-uppercase font-weight-bold text-white">
             Help and Support
           </h5>
           <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto">
->>>>>>> main
 
           <ul class="list-unstyled text-white">
             <li class="my-2">
@@ -80,16 +67,10 @@ export default {
         </div>
 
         <div class="col-md-3 mx-auto mb-4 mt-4">
-<<<<<<< HEAD
-          <h5 class="text-uppercase text-white font-weight-bold mb-4">
-            Follow ikman
-          </h5>
-=======
           <h5 class="text-uppercase font-weight-bold text-white">
             Follow ikman
           </h5>
           <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto">
->>>>>>> main
 
           <ul class="list-unstyled">
             <li class="my-2">
@@ -108,16 +89,10 @@ export default {
         </div>
 
         <div class="col-md-3 mx-auto mb-4 mt-4">
-<<<<<<< HEAD
-          <h5 class="text-uppercase text-white font-weight-bold mb-4">
-            About ikman
-          </h5>
-=======
           <h5 class="text-uppercase font-weight-bold text-white">
             About ikman
           </h5>
           <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto">
->>>>>>> main
 
           <ul class="list-unstyled">
             <li class="my-2">

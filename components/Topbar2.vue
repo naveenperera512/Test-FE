@@ -25,11 +25,7 @@ export default {}
       </nuxt-link>
       <div class="d-flex justify-content-end">
         <nuxt-link :to="{ path: '/auth/login'}"
-<<<<<<< HEAD
-        class="p-2 mr-2 text-white">
-=======
                    class="p-2 mr-2 text-white">
->>>>>>> main
           <h5 class="collapse navbar-collapse">
             <img class="mr-1 mt-n1" height="30" width="30" src="~/assets/images/user.png">
             <span class="text-white">Login</span>
@@ -61,11 +57,7 @@ export default {}
         <span class="navbar-toggler-icon text-white" />
       </button>
       <nuxt-link to="/employeer" class="navbar-brand">
-<<<<<<< HEAD
-        <h2>SL JOBS</h2>
-=======
         <h1 class="text-white">~ SL JOBS ~</h1>
->>>>>>> main
       </nuxt-link>
       <div class="d-flex justify-content-end">
         <nuxt-link
