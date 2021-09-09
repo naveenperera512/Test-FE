@@ -138,7 +138,6 @@ export default {
         .then((response) => {
           this.jobytpes = (response.data)
           this.paginats = (response.data).meta
-          console.log(this.jobytpes)
         })
         .catch((error) => {
           // eslint-disable-next-line no-console

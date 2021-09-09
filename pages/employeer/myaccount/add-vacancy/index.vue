@@ -146,6 +146,7 @@
                 <div class="form-group">
                   <label label="Date" label-cols-lg="2" label-cols-sm="2" label-for="deadline_date">Deadline Date <span
                     class="text-danger">*</span></label>
+<<<<<<< HEAD
                   <b-form-input 
                   id="deadline_date" 
                   v-model="form.deadline_date" 
@@ -158,6 +159,20 @@
                 >
                   {{ errors.deadline_date[0] }}
                 </b-form-invalid-feedback>
+=======
+                  <b-form-input
+                    id="deadline_date"
+                    v-model="form.deadline_date"
+                    type="date" value="2019-08-19"
+                    :state="errors && errors.deadline_date ? false : null"
+                  />
+                  <b-form-invalid-feedback
+                    v-if="errors && errors.deadline_date"
+                    id="input-deadline_date-feedback"
+                  >
+                    {{ errors.deadline_date[0] }}
+                  </b-form-invalid-feedback>
+>>>>>>> a665e4c7a2d18fce6272f4f85b0fb74a9c6b8da5
                 </div>
               </div>
             </div>
@@ -461,3 +476,7 @@ export default {
 
 </script>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a665e4c7a2d18fce6272f4f85b0fb74a9c6b8da5

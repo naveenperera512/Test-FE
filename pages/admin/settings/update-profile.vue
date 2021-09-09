@@ -17,11 +17,7 @@
                 <div class="form-group row">
                   <label class="col-sm-2 col-form-label">Email :</label>
                   <div class="col-sm-4">
-                    <input
-                      class="form-control-plaintext"
-                      type="email"
-                      value="email@example.com"
-                    >
+                    <label for=""><h5>{{ this.$auth.user.email }}</h5></label>
                   </div>
                 </div>
 

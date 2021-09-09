@@ -23,9 +23,9 @@ export default {
     <div class="container text-center text-md-left mt-5">
       <div class="row">
         <div class="col-md-3 mx-auto mb-4 mt-4">
-          <h6 class="text-uppercase font-weight-bold">
+          <h5 class="text-uppercase font-weight-bold text-white">
             More form ikman
-          </h6>
+          </h5>
           <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto">
 
           <ul class="list-unstyled text-white">
@@ -45,9 +45,9 @@ export default {
         </div>
 
         <div class="col-md-3 mx-auto mb-4 mt-4">
-          <h6 class="text-uppercase font-weight-bold">
+          <h5 class="text-uppercase font-weight-bold text-white">
             Help and Support
-          </h6>
+          </h5>
           <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto">
 
           <ul class="list-unstyled text-white">
@@ -67,9 +67,9 @@ export default {
         </div>
 
         <div class="col-md-3 mx-auto mb-4 mt-4">
-          <h6 class="text-uppercase font-weight-bold">
+          <h5 class="text-uppercase font-weight-bold text-white">
             Follow ikman
-          </h6>
+          </h5>
           <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto">
 
           <ul class="list-unstyled">
@@ -89,9 +89,9 @@ export default {
         </div>
 
         <div class="col-md-3 mx-auto mb-4 mt-4">
-          <h6 class="text-uppercase font-weight-bold">
+          <h5 class="text-uppercase font-weight-bold text-white">
             About ikman
-          </h6>
+          </h5>
           <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto">
 
           <ul class="list-unstyled">

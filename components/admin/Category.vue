@@ -138,7 +138,6 @@ export default {
         .then((response) => {
           this.categories = (response.data)
           this.paginats = (response.data).meta
-          console.log(this.categories)
         })
         .catch((error) => {
           // eslint-disable-next-line no-console
