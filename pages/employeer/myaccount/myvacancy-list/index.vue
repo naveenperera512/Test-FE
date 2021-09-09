@@ -2,25 +2,25 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-          <div class="card-body">
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-end mr-2 mb-3">
               <NuxtLink :to="{ path: '/employeer/myaccount/add-vacancy'}">
-                <button class="bg-warning text-white p-1 border-0">
-                  <div class="mx-2">
+                <button class="bg-warning text-white p-1 border-0 rounded">
+                  <div>
                     POST YOUR AD
                   </div>
                 </button>
               </NuxtLink>
             </div>
-            <h4 class="header-title mb-3">
-              My Vacancy List
-            </h4><h4 class="header-title mb-3" />
+            <!-- <div class="d-flex justify-content-start ml-2 mx-0">
+              <h5 class="header-title">
+                My Vacancy List
+              </h5>
+            </div> -->
             <b-card no-body class="shadow-none border-0">
               <div>
                 <MyVacancye />
               </div>
             </b-card>
-          </div>
         </div>
     </div>
   </div>

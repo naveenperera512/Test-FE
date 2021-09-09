@@ -2,51 +2,64 @@
   <div>
     <div class="container">
       <b-form v-for="(vacancy, index) in vacancies.data" :key="index"  v-if="vacancy.user_id == $auth.user.id ">
-        <nuxt-link :to="'/employeer/myaccount/myvacancy-list/' + vacancy.id">
-          <div class="card mt-2">
+        <div>
+        
+          <div class="card shadow">
             <div class="card-body pb-1">
+              <nuxt-link :to="'/employeer/myaccount/myvacancy-list/' + vacancy.id">
               <div class="row">
-                <div class="col-md-7">
-                  <div class="ml-2">
-                    <h4 class="bx-bold">
+                <div class="col-md-6">
+                  <div>
+                    <h4>
                       {{ vacancy.title }}
                     </h4>
                   </div>
-                  <div class="ml-3">
+                  <div class="text-muted">
                     <p>{{ vacancy.employee_name }}</p>
                   </div>
                 </div>
-                <div class="col-md-2 mt-3">
+                <div class="col-md-4 mt-2 text-muted">
                   <p>{{ vacancy.district.name }} , {{ vacancy.cities.name }}</p>
                 </div>
-                <div class="col-md-3 ">
-                  <div class="d-flex justify-content-end">
-                    {{ vacancy.created_at }}
-                  </div>
-                  <div class="d-flex justify-content-end mr-3 mt-2">
-                    <div class="alert alert-primary" role="alert">
+                <div class="col-md-2 text-muted">
+
+                  <div class="d-flex">
+                    <div class="rounded text-mute">
                       {{ vacancy.jobs.name }}
                     </div>
                   </div>
+
                   <div v-if="vacancy.is_approved == 0 ">
-                    <button v-on:click="peding(vacancy.id) "  class="bg-warning border-0">
-                      <div class="mx-4 text-white">
-                        pending
+                    <div>
+                      <div class="btn-sm">
+                        <h6 class="text-warning">Pending</h6>
                       </div>
-                    </button>
+                    </div>
                   </div>
                   <div v-else>
-                    <button v-on:click=""  class="bg-success border-0">
-                      <div class="mx-4 text-white">
-                        Approved
+                    <div>
+                      <div class="btn-sm">
+                        <h6 class="text-success">Approved</h6>
                       </div>
-                    </button>
+                    </div>
                   </div>
                 </div>
               </div>
+              </nuxt-link>
+            </div>
+            <div class="d-flex justify-content-end">
+              <nuxt-link :to="'/employeer/myaccount/myvacancy-list/edit/' + vacancy.id">
+                <b-button
+                      class=" ml-2 bg-success btn-sm mb-2 mr-4"
+                      type="submit"
+                    >
+                      Vacancy Edit
+                    </b-button>
+              </nuxt-link>
             </div>
           </div>
-        </nuxt-link>
+        </div>
+        
       </b-form>
       <div class="d-flex justify-content-center">
         <LaravelVuePagination :data="vacancies" @pagination-change-page="getVacancies" class="pagination pagination-rounded">

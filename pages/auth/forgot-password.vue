@@ -1,6 +1,6 @@
 <template>
 <div class="row justify-content-center">
-    <div class="col-md-8 col-lg-6 col-xl-5 mt-5">
+    <div class="col-md-8 col-lg-6 col-xl-5">
         <div class="card">
 
             <div class="card-body p-4">
@@ -8,14 +8,14 @@
                 <div class="text-center w-75 m-auto">
                     <div class="auth-logo">
                             <span class="logo-lg">
-                                 <img src="~/assets/images/favicon.png" width="50">
+                                 <img src="~/assets/images/auth-logo.png" width="100">
                             </span>
                     </div>
-                     <div class="logo-lg mt-2">
+                     <!-- <div class="logo-lg mt-2">
                             <span >
                                  <img src="~/assets/images/logo-new.png" width="200">
                             </span>
-                    </div>
+                    </div> -->
                     <p class="text-muted mb-4 mt-3">Enter your email address and we'll send you an email with instructions to reset your password.</p>
                 </div>
 

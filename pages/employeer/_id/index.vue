@@ -1,18 +1,21 @@
 <template>
   <div>
     <div class="container">
-
-      <div class="row card mt-2 shadow">
-        <div>
-          <div class="row mb-3">
-            <div>
-              <div class="p-2 mb-lg-0 ml-5">
-                <div>
-                  <nuxt-link to="/employeer" class="btn bg-info ml-2">
-                    Back
+      <div class="row card mt-3 shadow">
+          <div class="col-12">
+              <div class="p-2 mb-lg-0 ml-2">
+                <div class="col-md-12">
+                  <nuxt-link to="/employeer">
+                    <b-button
+                      class="bg-primary btn-sm mt-3"
+                      type="submit"
+                    >
+                      Back
+                    </b-button>
                   </nuxt-link>
                 </div>
-                <table class="table table-borderless table-sm mb-0">
+                <div class="row ml-1 mt-3">
+                <table class="table table-borderless table-sm mb-0 col-md-6">
                   <tbody>
                   <tr>
                     <th scope="row">
@@ -30,6 +33,10 @@
                     </th>
                     <td>{{ vacancies.deadline_date }}</td>
                   </tr>
+                  </tbody>
+                </table>
+                <table class="table table-borderless table-sm mb-0 col-md-6">
+                  <tbody>
                   <tr>
                     <th scope="row">
                       Location:
@@ -48,27 +55,25 @@
                     </th>
                     <td>{{ vacancies.telephone }}</td>
                   </tr>
-                  <tr>
-                    <th scope="row">
-                      Description:
-                    </th>
-                    <td>{{ vacancies.description }}</td>
-                  </tr>
                   </tbody>
                 </table>
-              </div>
-            </div>
+                </div>
+                </div>
+                </div>
+                <div>
+                    <div class="row justify-content-center mb-3">
+                      Description:
+                    </div>
+                    <div class="row justify-content-center mb-4">{{ vacancies.description }}</div>
           </div>
-          <div class="row justify-content-center ml-5">
-            <div>
-              <img id="myImage" alt="product-img" width="600px" height="1000px" src="~/assets/images/vacancy.png">
+          <div class="row justify-content-center mb-4">
+            <div class="shadow-lg">
+              <img id="myImage" alt="product-img" width="500px" height="800px" src="~/assets/images/vacancy.png">
+            </div>
             </div>
           </div>
         </div>
       </div>
-
-    </div>
-  </div>
 </template>
 <script>
 export default {

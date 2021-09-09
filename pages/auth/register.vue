@@ -1,18 +1,18 @@
 <template>
   <!-- Login form -->
   <div class="row justify-content-center">
-    <div class="col-md-8 col-lg-6 col-xl-5 mt-5">
+    <div class="col-md-8 col-lg-6 col-xl-5">
         <div class="card">
             <div class="card-body p-4">
                 <div class="text-center w-75 m-auto">
                     <div class="auth-logo">
                         <div class="logo logo-dark text-center">
                            <span class="logo-lg">
-                               <img src="~/assets/images/favicon.png" width="50">
+                               <img src="~/assets/images/auth-logo.png" width="100">
                            </span>
-                            <span class="logo-lg mt-2">
+                            <!-- <span class="logo-lg mt-2">
                                <img src="~/assets/images/logo-new.png" width="200">
-                            </span>
+                            </span> -->
                         </div>
                     </div>
                     <p class="text-muted mb-4 mt-3">Don't have an account? Create your own account, it takes less than a minute</p>

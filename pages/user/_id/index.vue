@@ -1,77 +1,87 @@
 <template>
+  <div>
     <div class="container">
-      <div class="row card mt-2 shadow">
-        <div>
-          <div class="row mb-3">
-            <div>
-              <div class="p-2 mb-lg-0 ml-5">
-                <div class="row">
-                  <div>
-                    <div class="row justify-content-center ml-5">
-                      <div>
-                        <nuxt-link class="btn bg-info ml-2" to="/user">
-                          Back
-                        </nuxt-link>
-                      </div>
-                      <table class="table table-borderless table-sm mb-0">
-                        <tbody>
-                        <tr>
-                          <th scope="row">
-                            Employeer:
-                          </th>
-                          <td>{{ vacancies.employee_name }}</td>
-                        </tr>
-                        <th scope="row">
-                          Job type:
-                        </th>
-                        <td>{{ jobs.name }}</td>
-                        <tr>
-                          <th scope="row">
-                            Aplication deadline:
-                          </th>
-                          <td>{{ vacancies.deadline_date }}</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">
-                            Location:
-                          </th>
-                          <td>{{ district.name }} , {{ cities.name }}</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">
-                            Email address:
-                          </th>
-                          <td>{{ vacancies.employee_email }}</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">
-                            Phone :
-                          </th>
-                          <td>{{ vacancies.telephone }}</td>
-                        </tr>
-                        </tbody>
-                      </table>
+      <div class="row card mt-3 shadow">
+          <div class="col-12">
+              <div class="p-2 mb-lg-0 ml-2">
+                <div class="col-md-12">
+                  <nuxt-link to="/user">
+                    <b-button
+                      class="bg-primary btn-sm mt-3"
+                      type="submit"
+                    >
+                      Back
+                    </b-button>
+                  </nuxt-link>
+                </div>
+                <div class="row ml-1 mt-3">
+                <table class="table table-borderless table-sm mb-0 col-md-6">
+                  <tbody>
+                  <tr>
+                    <th scope="row">
+                      Employeer:
+                    </th>
+                    <td>{{ vacancies.employee_name }}</td>
+                  </tr>
+                  <th scope="row">
+                    Job type:
+                  </th>
+                  <td>{{ jobs.name }}</td>
+                  <tr>
+                    <th scope="row">
+                      Aplication deadline:
+                    </th>
+                    <td>{{ vacancies.deadline_date }}</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <table class="table table-borderless table-sm mb-0 col-md-6">
+                  <tbody>
+                  <tr>
+                    <th scope="row">
+                      Location:
+                    </th>
+                    <td>{{ district.name }} , {{ cities.name }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      Email address:
+                    </th>
+                    <td>{{ vacancies.employee_email }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      Phone :
+                    </th>
+                    <td>{{ vacancies.telephone }}</td>
+                  </tr>
+                  </tbody>
+                </table>
+                </div>
+                </div>
+                </div>
+                <div>
+                    <div class="row justify-content-center mb-3">
+                      Description:
                     </div>
-                  </div>
-                </div>
-                <div class="row justify-content-center ml-5">
-                  <div>
-                    <img id="myImage" alt="product-img" height="1000px" src="~/assets/images/vacancy.png" width="600px">
-                  </div>
-                </div>
-              </div>
+                    <div class="row justify-content-center mb-4">{{ vacancies.description }}</div>
+          </div>
+          <div class="row justify-content-center mb-4">
+            <div class="shadow-lg">
+              <img id="myImage" alt="product-img" width="500px" height="800px" src="~/assets/images/vacancy.png">
+            </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 </template>
 <script>
 export default {
 
-  components: {},
+  components: {
+  },
 
-  data() {
+  data () {
     return {
       vacancies: [],
       jobs: [],
@@ -81,7 +91,7 @@ export default {
     }
   },
 
-  created() {
+  created () {
     try {
       this.$axios.get(`api/vacancies/${this.$route.params.id}`)
         .then((response) => {
