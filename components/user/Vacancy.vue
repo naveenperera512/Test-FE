@@ -45,6 +45,7 @@
         md="1"
       />
     </div>
+<<<<<<< HEAD
   <div class="container">
     <b-form v-for="vacancy in vacancies.data" :key="vacancy.id">
       <nuxt-link :to="'/user/' + vacancy.id">
@@ -72,20 +73,51 @@
                 <div class="alert alert-primary" role="alert">
                   {{ vacancy.jobs.name }}
                 </div>
+=======
+    <div class="container">
+      <b-form v-for="(vacancy, index) in vacancies.data" :key="index" >
+        <nuxt-link :to="'/user/' + vacancy.id">
+          <div class="card mt-2 shadow">
+            <div class="card-body pb-1">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="ml-2">
+                    <h4>
+                      {{ vacancy.title }}
+                    </h4>
+                  </div>
+                  <div class="ml-3 text text-muted">
+                    <p>{{ vacancy.employee_name }}</p>
+                  </div>
+                </div>
+                <div class="col-md-3 mt-3 text-muted">
+                  <img class="mt-n1" height="30" src="~/assets/images/marker.png" width="30">
+                  {{ vacancy.district.name }} , {{ vacancy.cities.name }}
+                </div>
+                <div class="col-md-3 text-muted">
+                  <div class="d-flex justify-content-end">
+                    <div class="text-danger">Expire date : </div>{{ vacancy.deadline_date}}
+                  </div>
+                  <div class="d-flex justify-content-end mr-3 mt-2">
+                    <div class="alert alert-success" role="alert">
+                      {{ vacancy.jobs.name }}
+                    </div>
+                  </div>
+                </div>
+>>>>>>> main
               </div>
             </div>
           </div>
-        </div>
+
+        </nuxt-link>
+      </b-form>
+      <div class="d-flex justify-content-center">
+        <LaravelVuePagination :data="vacancies" @pagination-change-page="getVacancies" class="pagination pagination-rounded">
+          <span slot="prev-nav">&lt; Previous</span>
+          <span slot="next-nav">Next &gt;</span>
+        </LaravelVuePagination>
       </div>
-      </nuxt-link>
-    </b-form>
-    <div class="d-flex justify-content-center">
-      <LaravelVuePagination :data="vacancies" @pagination-change-page="getVacancies" class="pagination pagination-rounded">
-        <span slot="prev-nav">&lt; Previous</span>
-        <span slot="next-nav">Next &gt;</span>
-      </LaravelVuePagination>
     </div>
-  </div>
   </div>
 </template>
 
@@ -110,6 +142,7 @@ export default {
   },
   created() {
     this.getVacancies()
+<<<<<<< HEAD
   },
   mounted (){
       try {
@@ -149,6 +182,47 @@ export default {
     job_type_id(value) { this.getVacancies();},
     district_id(value) { this.getVacancies();}
   },
+=======
+  },
+  mounted (){
+    try {
+      this.$axios.get('api/categories')
+        .then((response) => {
+          this.categories = (response.data).data
+        });
+      this.getVacancies();
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error)
+    }
+    try {
+      this.$axios.get('api/jobTypes')
+        .then((response) => {
+          this.jobtypes = (response.data).data
+        });
+      this.getVacancies();
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error)
+    }
+    try {
+      this.$axios.get('api/districts')
+        .then((response) => {
+          this.districts = (response.data).data
+        });
+      this.getVacancies();
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error)
+    }
+
+  },
+  watch: {
+    category_id(value) { this.getVacancies();},
+    job_type_id(value) { this.getVacancies();},
+    district_id(value) { this.getVacancies();}
+  },
+>>>>>>> main
   methods: {
     getVacancies(page=1) {
       try {
@@ -158,7 +232,10 @@ export default {
           + '&district_id=' + this.district_id )
           .then((response) => {
             this.vacancies = (response.data)
+<<<<<<< HEAD
             console.log(this.vacancies)
+=======
+>>>>>>> main
           })
       } catch (error) {
         // eslint-disable-next-line no-console

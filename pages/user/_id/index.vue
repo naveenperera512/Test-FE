@@ -29,7 +29,7 @@
                           <th scope="row">
                             Aplication deadline:
                           </th>
-                          <td>2021-10-31</td>
+                          <td>{{ vacancies.deadline_date }}</td>
                         </tr>
                         <tr>
                           <th scope="row">

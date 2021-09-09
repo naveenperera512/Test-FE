@@ -83,7 +83,6 @@ export default {
         this.$axios.get('api/employee/vacancies?page=' + page)
           .then((response) => {
             this.vacancies = (response.data)
-            console.log(this.vacancies)
           })
       } catch (error) {
         // eslint-disable-next-line no-console
