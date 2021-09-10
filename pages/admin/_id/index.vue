@@ -23,14 +23,14 @@
             <b-form-group label-for="name">
               <template #label>
                 Category Name <span class="text-danger">*</span>
-                {{ categories.name }}
               </template>
               <b-form-input
                 id="name"
-                v-model="form.name"
+                v-model="categories.name"
                 type="text"
                 :state="errors && errors.name ? false : null"
                 placeholder="Enter name"
+                :value="'categories.name'"
                 required
               />
               <b-form-invalid-feedback
@@ -44,11 +44,10 @@
             <b-form-group label-for="description">
               <template #label>
                 Category Description <span class="text-danger">*</span>
-                {{ categories.description }}
               </template>
               <b-form-input
                 id="description"
-                v-model="form.description"
+                v-model="categories.description"
                 type="text"
                 :state="errors && errors.description ? false : null"
                 placeholder="Enter Category Description"
@@ -66,11 +65,10 @@
             <b-form-group label-for="slug">
               <template #label>
                 Slug <span class="text-danger">*</span>
-                {{ categories.slug }}
               </template>
               <b-form-input
                 id="slug"
-                v-model="form.slug"
+                v-model="categories.slug"
                 type="text"
                 :state="errors && errors.slug ? false : null"
                 placeholder="Enter slug"
@@ -119,9 +117,8 @@ export default {
   },
   data () {
     return {
-      categories: [],
       errors: {},
-      form: {
+      categories: {
         name: '' ,
         description: '',
         slug: ''
@@ -142,7 +139,7 @@ export default {
   methods: {
     async addCategoryInformation () {
       try {
-        await this.$axios.put(`api/admin/categories/${this.$route.params.id}`, this.form)
+        await this.$axios.put(`api/admin/categories/${this.$route.params.id}`, this.categories)
         await this.$router.replace({ path: '/admin' })
       } catch (error) {
         if (error.response.status === 422) {

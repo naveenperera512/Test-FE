@@ -23,11 +23,10 @@
             <b-form-group label-for="name">
               <template #label>
                 Category Name <span class="text-danger">*</span>
-                {{ jobTypes.name }}
               </template>
               <b-form-input
                 id="name"
-                v-model="form.name"
+                v-model="jobTypes.name"
                 type="text"
                 :state="errors && errors.name ? false : null"
                 placeholder="Enter name"
@@ -45,11 +44,10 @@
             <b-form-group label-for="slug">
               <template #label>
                 Slug <span class="text-danger">*</span>
-                {{ jobTypes.slug }}
               </template>
               <b-form-input
                 id="slug"
-                v-model="form.slug"
+                v-model="jobTypes.slug"
                 type="text"
                 :state="errors && errors.slug ? false : null"
                 placeholder="Enter slug"
@@ -98,9 +96,8 @@ export default {
   },
   data () {
     return {
-      jobTypes: [],
       errors: {},
-      form: {
+      jobTypes: {
         name: '' ,
         slug: ''
       }
@@ -120,7 +117,7 @@ export default {
   methods: {
     async addJobTypeInformation () {
       try {
-        await this.$axios.put(`api/admin/jobTypes/${this.$route.params.id}`, this.form)
+        await this.$axios.put(`api/admin/jobTypes/${this.$route.params.id}`, this.jobTypes)
         await this.$router.replace({ path: '/admin/jobType' })
       } catch (error) {
         if (error.response.status === 422) {
