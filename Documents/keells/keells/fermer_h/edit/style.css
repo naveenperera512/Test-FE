@@ -1,0 +1,58 @@
+body{
+	font-family: sans-serif;
+	text-align: center;
+	background: green;
+	padding: 20px;
+	background-image: url(1.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+h3{
+	font-size: 35px;
+	color: #543223;
+}
+
+form{
+	background-color:white;
+	width:60%;
+	padding: 30px;
+	border-radius: 30px;
+	box-shadow: 10px 10px 35px black;
+}
+
+input{
+	height: 20px;
+	width: 40%;
+	padding: 6px;
+	background-color: #f7d986;
+	border-radius: 6px;
+	color: #543223;
+	font-weight: bold;
+	border-style: none;
+}
+
+option{
+	background-color: #f7d986;
+}
+
+#btn{
+	background-color: #543223;
+	color:white;
+	padding: 10px;
+	margin: 8px;
+	text-align: center;
+	height: 40px;
+	width: 100px;
+	border-radius: 15px;
+}
+
+.error{
+	color:red;
+}
+
+#signin{
+	background-image: url(2.jpg);
+}
